@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/#home" },
   { label: "Services", href: "/services" },
   { label: "Process", href: "/process" },
   { label: "Industries", href: "/industries" },
@@ -15,7 +15,12 @@ export default function Navbar() {
     <header className="fixed left-0 top-0 z-50 w-full px-6 pt-6 md:px-12">
       <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-[22px] border border-cyan-300/45 bg-[#02070b]/78 px-8 py-3.5 shadow-[0_0_16px_rgba(34,211,238,0.22),inset_0_0_22px_rgba(34,211,238,0.045)] backdrop-blur-2xl md:px-12">
         {/* Logo */}
-        <Link href="/" className="shrink-0">
+        <Link
+          href="/#home"
+          scroll
+          aria-label="Go to LeadsRift homepage"
+          className="shrink-0"
+        >
           <Image
             src="/leadsrift-logo.png"
             alt="LeadsRift"
@@ -32,6 +37,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
+              scroll
               className="transition duration-300 hover:text-cyan-300"
             >
               {item.label}
