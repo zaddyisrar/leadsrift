@@ -14,11 +14,13 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#05070d] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-[#05070d] text-white">
       <Navbar />
+
       <Hero />
       <ProofBar />
       <Problem />
+
       <Services />
       <Pipeline />
       <Industries />
@@ -27,6 +29,7 @@ export default function Home() {
       <Process />
       <FAQ />
       <FinalCTA />
+
       <Footer />
     </main>
   );
