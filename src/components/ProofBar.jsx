@@ -1,9 +1,4 @@
-const stats = [
-  { number: "30,061+", label: "Emails Sent" },
-  { number: "6,523", label: "Opens Generated" },
-  { number: "1,629", label: "Replies Tracked" },
-  { number: "200+", label: "Accepted Opportunities" },
-];
+import Link from "next/link";
 
 const clients = [
   "Roli Cleaners",
@@ -50,24 +45,13 @@ export default function ProofBar() {
           </div>
         </div>
 
-        <div className="my-12 h-px bg-gradient-to-r from-transparent via-cyan-300/25 to-transparent" />
-
-        <div className="rounded-[2rem] border border-cyan-300/10 bg-white/[0.03] p-7 backdrop-blur-2xl">
-          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat, index) => (
-              <div key={stat.label} className="relative text-center">
-                {index !== 3 && (
-                  <div className="absolute right-0 top-1/2 hidden h-12 w-px -translate-y-1/2 bg-cyan-300/20 lg:block" />
-                )}
-
-                <h3 className="text-4xl font-bold text-cyan-300 drop-shadow-[0_0_18px_rgba(34,211,238,0.25)]">
-                  {stat.number}
-                </h3>
-
-                <p className="mt-2 text-sm text-gray-400">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/reviews"
+            className="rounded-full border border-cyan-300/45 bg-cyan-300/10 px-7 py-3.5 text-center text-sm font-bold text-cyan-100 shadow-[0_0_28px_rgba(34,211,238,0.18)] transition duration-300 hover:border-cyan-300/80 hover:bg-cyan-300 hover:text-black hover:shadow-[0_0_35px_rgba(34,211,238,0.35)]"
+          >
+            See What They Say About Us?
+          </Link>
         </div>
       </div>
     </section>

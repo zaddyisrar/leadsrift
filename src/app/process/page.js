@@ -77,13 +77,6 @@ const steps = [
   },
 ];
 
-const metrics = [
-  "30,061+ Emails Sent",
-  "6,523 Opens Generated",
-  "1,629 Replies Tracked",
-  "200+ Accepted Opportunities",
-];
-
 const whyItWorks = [
   "Clear targeting before outreach starts.",
   "Every channel supports the same pipeline goal.",
@@ -96,72 +89,21 @@ export default function ProcessPage() {
     <main className="min-h-screen bg-[#05070d] text-white">
       <Navbar />
 
-      <section className="relative overflow-hidden px-6 pt-44 pb-24 md:pt-48">
+      <section className="relative overflow-hidden border-y border-cyan-300/10 bg-cyan-300/[0.025] px-6 pt-44 pb-24 md:pt-48">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.035)_1px,transparent_1px)] bg-[size:70px_70px]" />
         <div className="pointer-events-none absolute left-1/2 top-24 h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px]" />
         <div className="pointer-events-none absolute left-[-140px] top-56 h-80 w-80 rounded-full border border-cyan-300/10" />
         <div className="pointer-events-none absolute right-[-140px] bottom-10 h-80 w-80 rounded-full border border-cyan-300/10" />
 
-        <div className="relative mx-auto max-w-6xl text-center">
-          <p className="mb-10 text-sm font-semibold uppercase tracking-[0.5em] text-cyan-300">
-            LEADSRIFT PROCESS
-          </p>
-
-          <h1 className="mx-auto max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">
-            A clean outbound pipeline from first strategy call to booked
-            appointments.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/60 md:text-lg">
-            LeadsRift does not rely on random activity. We build a structured
-            system for targeting, outreach, qualification, follow-up, and
-            appointment delivery.
-          </p>
-
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="rounded-full bg-cyan-300 px-7 py-3 text-sm font-semibold text-black shadow-[0_0_35px_rgba(34,211,238,0.35)] transition hover:bg-white"
-            >
-              Book Free Strategy Call
-            </Link>
-
-            <Link
-              href="/services"
-              className="rounded-full border border-cyan-300/30 px-7 py-3 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300/70 hover:bg-cyan-300/10"
-            >
-              View Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 pb-24">
-        <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {metrics.map((metric) => (
-            <div
-              key={metric}
-              className="rounded-2xl border border-cyan-300/10 bg-white/[0.03] px-5 py-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:border-cyan-300/30 hover:bg-cyan-300/[0.04]"
-            >
-              <p className="text-sm font-semibold text-cyan-200">{metric}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden border-y border-cyan-300/10 bg-cyan-300/[0.025] px-6 py-24">
-        <div className="pointer-events-none absolute left-0 top-20 h-72 w-72 rounded-full bg-cyan-300/10 blur-[130px]" />
-        <div className="pointer-events-none absolute right-0 bottom-0 h-80 w-80 rounded-full bg-cyan-300/8 blur-[140px]" />
-
         <div className="relative mx-auto max-w-6xl">
           <div className="mb-16 max-w-3xl">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">
-              Execution Timeline
+              LEADSRIFT PROCESS
             </p>
 
-            <h2 className="text-3xl font-semibold leading-tight md:text-5xl">
+            <h1 className="text-3xl font-semibold leading-tight md:text-5xl">
               Every stage has a job. No guesswork. No messy handoffs.
-            </h2>
+            </h1>
           </div>
 
           <div className="relative mx-auto max-w-5xl">
@@ -181,6 +123,7 @@ export default function ProcessPage() {
                     <div>
                       <div className="mb-3 flex items-center gap-3">
                         <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(34,211,238,1)]" />
+
                         <p className="font-mono text-xs uppercase tracking-[0.25em] text-cyan-300">
                           {step.label}
                         </p>
@@ -238,6 +181,7 @@ export default function ProcessPage() {
                 <span className="mt-1 text-sm font-semibold text-cyan-300">
                   {String(index + 1).padStart(2, "0")}
                 </span>
+
                 <p className="leading-7 text-white/70">{item}</p>
               </div>
             ))}

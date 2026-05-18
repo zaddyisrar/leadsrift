@@ -1,22 +1,3 @@
-const problems = [
-  {
-    title: "Referrals Are Unpredictable",
-    desc: "Some months bring opportunities. Others bring silence.",
-  },
-  {
-    title: "Ads Get Expensive",
-    desc: "Higher costs. Lower returns. Less control.",
-  },
-  {
-    title: "Leads Go Cold Fast",
-    desc: "Delayed follow-ups quietly kill opportunities.",
-  },
-  {
-    title: "Sales Teams Are Costly",
-    desc: "Hiring and managing outreach creates overhead.",
-  },
-];
-
 export default function Problem() {
   return (
     <section className="relative overflow-hidden border-b border-cyan-500/10 bg-[#03060b] px-6 py-24">
@@ -33,59 +14,53 @@ export default function Problem() {
 
       <div className="relative mx-auto max-w-7xl">
 
-        {/* Heading */}
-        <div className="max-w-4xl">
+        {/* Main */}
+        <div className="mx-auto max-w-5xl text-center">
 
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-cyan-300">
-            The Problem
+            Problem
           </p>
 
           <h2 className="text-4xl font-semibold tracking-tight text-white md:text-6xl">
-            Most Businesses Don’t Have A Lead Problem.
+            Most businesses do not have a lead problem.
             <br />
 
             <span className="text-cyan-300">
-              They Have A Follow-Up Problem.
+              They have a follow-up and appointment-setting problem.
             </span>
           </h2>
 
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-gray-300">
-            Referrals, ads, and random inquiries create inconsistency.
-            Without a system, prospects disappear, pipelines dry up,
-            and growth becomes unpredictable.
+          <p className="mx-auto mt-7 max-w-4xl text-lg leading-8 text-gray-300">
+            Many companies depend on referrals, ads, or random inquiries.
+            But without consistent outbound outreach, their sales pipeline
+            becomes unpredictable. LeadsRift solves this by building a
+            repeatable outreach system that brings qualified prospects
+            directly into your calendar.
           </p>
 
         </div>
 
-        {/* Cards */}
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {/* What We Do */}
 
-          {problems.map((item, index) => (
-            <div
-              key={item.title}
-              className={`group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-500 hover:border-cyan-300/30 hover:bg-cyan-300/[0.05] hover:-translate-y-2 ${
-                index % 2 === 0 ? "lg:mt-0" : "lg:mt-10"
-              }`}
-            >
-              {/* glow */}
-              <div className="absolute right-0 top-0 h-32 w-32 bg-cyan-300/10 blur-[70px] opacity-0 transition duration-500 group-hover:opacity-100" />
+        <div className="mx-auto mt-14 max-w-4xl rounded-[2rem] border border-cyan-300/15 bg-cyan-300/[0.03] p-8 backdrop-blur-xl">
 
-              {/* icon */}
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 shadow-[0_0_25px_rgba(34,211,238,0.15)]">
-                <span className="text-cyan-300">
-                  0{index + 1}
-                </span>
-              </div>
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-cyan-300">
+            What We Do
+          </p>
 
-              <h3 className="text-xl font-semibold text-white">
-                {item.title}
-              </h3>
+          <h3 className="text-3xl font-semibold text-white">
+            We handle the outreach.
+            <span className="text-cyan-300">
+              {" "}You close the deals.
+            </span>
+          </h3>
 
-              <p className="mt-4 text-sm leading-7 text-gray-400">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+          <p className="mt-5 text-lg leading-8 text-gray-300">
+            We help companies find prospects, contact them,
+            qualify them, follow up, and book appointments,
+            so your team can focus on selling and delivering
+            the service.
+          </p>
 
         </div>
 

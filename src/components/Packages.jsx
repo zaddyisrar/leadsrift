@@ -11,6 +11,7 @@ const packages = [
       "Weekly update",
     ],
   },
+
   {
     name: "Growth Engine",
     desc: "For companies that want consistent booked appointments.",
@@ -26,6 +27,7 @@ const packages = [
       "Dedicated campaign manager",
     ],
   },
+
   {
     name: "Premium Revenue Partner",
     desc: "For serious companies that want full pipeline support.",
@@ -35,12 +37,12 @@ const packages = [
       "Advanced targeting",
       "Appointment quality control",
       "CRM setup",
-      "Script improvement",
+      "Sales script improvement",
       "Call recordings",
       "Weekly strategy call",
       "Pipeline review",
       "Dedicated callers",
-      "Priority scaling",
+      "Priority campaign scaling",
     ],
   },
 ];

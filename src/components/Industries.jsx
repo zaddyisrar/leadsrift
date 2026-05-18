@@ -1,16 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const industries = [
   { name: "Commercial Cleaning", icon: "▥", position: "left-[47%] top-[4%] -translate-x-1/2" },
   { name: "Roofing", icon: "⌂", position: "right-[5%] top-[18%]" },
-  { name: "Solar", icon: "☼", position: "right-[0%] top-[42%]" },
-  { name: "Engineering", icon: "⚙", position: "right-[6%] bottom-[22%]" },
-  { name: "SaaS", icon: "☁", position: "right-[22%] bottom-[4%]" },
-  { name: "Finance / Merchant Processing", icon: "▤", position: "left-[43%] bottom-[-2%] -translate-x-1/2" },
+  { name: "Solar & Wind", icon: "☼", position: "right-[0%] top-[42%]" },
+  { name: "Engineering Firms", icon: "⚙", position: "right-[6%] bottom-[22%]" },
+  { name: "B2B SaaS", icon: "☁", position: "right-[22%] bottom-[4%]" },
+  { name: "Finance", icon: "▤", position: "left-[43%] bottom-[-2%] -translate-x-1/2" },
   { name: "Real Estate", icon: "▥", position: "left-[10%] bottom-[14%]" },
-  { name: "Dental", icon: "♢", position: "left-[3%] top-[45%]" },
+  { name: "Dental Clinics", icon: "♢", position: "left-[3%] top-[45%]" },
   { name: "Local Services", icon: "✕", position: "left-[8%] top-[28%]" },
   { name: "Restaurants", icon: "⋔", position: "left-[18%] top-[12%]" },
+  { name: "Cybersecurity", icon: "◈", position: "right-[26%] top-[8%]" },
+  { name: "Property Management", icon: "▣", position: "left-[18%] bottom-[3%]" },
+  { name: "Insurance", icon: "◉", position: "right-[20%] top-[58%]" },
+  { name: "Construction", icon: "▦", position: "left-[20%] top-[62%]" },
 ];
 
 const wires = [
@@ -42,13 +47,13 @@ export default function Industries() {
           </p>
 
           <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            Built For Service Businesses That Need{" "}
-            <span className="text-cyan-300">Consistent Conversations</span>
+            Powering Growth Across{" "}
+            <span className="text-cyan-300">24+ Industries</span>
           </h2>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-gray-300">
             LeadsRift adapts outbound systems around your market, offer,
-            decision-makers, and follow-up cycle.
+            decision-makers, service area, and follow-up cycle.
           </p>
 
           <div className="mt-8 flex max-w-xl items-center gap-5 rounded-[2rem] border border-cyan-300/15 bg-cyan-300/[0.05] p-5 backdrop-blur-xl">
@@ -61,16 +66,24 @@ export default function Industries() {
               real pipeline value.
             </p>
           </div>
+
+          <Link
+            href="/industries"
+            className="mt-8 inline-flex items-center gap-3 rounded-full border border-cyan-300/45 bg-cyan-300/10 px-7 py-3.5 text-sm font-bold text-cyan-100 shadow-[0_0_28px_rgba(34,211,238,0.18)] transition duration-300 hover:border-cyan-300 hover:bg-cyan-300 hover:text-black hover:shadow-[0_0_35px_rgba(34,211,238,0.35)]"
+          >
+            Explore Industries
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-300 text-black">
+              ↗
+            </span>
+          </Link>
         </div>
 
         <div className="relative mx-auto aspect-square w-full max-w-[600px] lg:max-w-[620px]">
-          {/* Tiny particles */}
           <div className="absolute left-[22%] top-[20%] h-1 w-1 rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(34,211,238,0.9)]" />
           <div className="absolute right-[16%] top-[34%] h-1 w-1 rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(34,211,238,0.9)]" />
           <div className="absolute bottom-[22%] left-[34%] h-1 w-1 rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(34,211,238,0.9)]" />
           <div className="absolute bottom-[34%] right-[22%] h-1 w-1 rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(34,211,238,0.9)]" />
 
-          {/* Curved glowing strings */}
           <svg
             className="absolute inset-0 z-10 h-full w-full overflow-visible"
             viewBox="0 0 660 660"
@@ -108,11 +121,9 @@ export default function Industries() {
             ))}
           </svg>
 
-          {/* Center glow circle behind symbol */}
           <div className="absolute left-1/2 top-1/2 z-20 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/20 blur-[45px]" />
           <div className="absolute left-1/2 top-1/2 z-20 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/30 blur-[28px]" />
 
-          {/* Symbol only, no ring */}
           <div className="absolute left-1/2 top-1/2 z-30 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center">
             <Image
               src="/leadsrift-symbol.png"

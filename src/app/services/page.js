@@ -5,65 +5,87 @@ import Footer from "@/components/Footer";
 const services = [
   {
     number: "01",
-    title: "Cold Calling",
+    title: "Cold Calling Appointment Setting",
     description:
-      "Direct outreach handled with structure, positioning, qualification, and consistent follow-up — not random dialing.",
+      "Our trained callers contact your target prospects, qualify interest, handle objections, and schedule appointments directly into your calendar.",
     points: [
       "Prospect calling",
       "Qualification",
       "Objection handling",
-      "Meeting booking",
+      "Appointment booking",
     ],
   },
   {
     number: "02",
-    title: "Email Outreach",
+    title: "B2B Lead Generation",
     description:
-      "Campaigns built to reach targeted prospects with clean messaging, tracking, replies, and follow-up systems.",
+      "We build targeted lead lists based on industry, location, company size, decision-maker role, and service area.",
     points: [
-      "Cold email campaigns",
-      "Reply tracking",
-      "Follow-up sequences",
-      "Inbox management",
+      "Industry targeting",
+      "Decision makers",
+      "Company filtering",
+      "Lead research",
     ],
   },
   {
     number: "03",
-    title: "LinkedIn Outreach",
+    title: "B2C Lead Generation",
     description:
-      "A professional LinkedIn system for starting conversations, building trust, and moving prospects toward calls.",
+      "We help local service businesses reach homeowners, property owners, and potential customers in specific geographic areas.",
     points: [
-      "Connection strategy",
-      "Message sequences",
-      "Prospect nurturing",
-      "Conversation tracking",
+      "Homeowner targeting",
+      "Local markets",
+      "Service areas",
+      "Lead sourcing",
     ],
   },
   {
     number: "04",
-    title: "Lead Qualification",
+    title: "Email Marketing Outreach",
     description:
-      "We filter noise from real opportunities so your team spends time only with prospects that actually make sense.",
-    points: ["Fit checking", "Need discovery", "Interest level", "Opportunity scoring"],
+      "We create and send personalized email campaigns designed to generate replies and start sales conversations.",
+    points: [
+      "Email campaigns",
+      "Personalized messaging",
+      "Reply tracking",
+      "Follow-up sequences",
+    ],
   },
   {
     number: "05",
-    title: "Follow-Up Management",
+    title: "LinkedIn Outreach",
     description:
-      "Most deals die in silence. We keep the pipeline alive with structured follow-ups across channels.",
+      "We connect with decision-makers, send personalized messages, follow up, and turn conversations into booked calls.",
     points: [
-      "Multi-touch follow-up",
-      "Pipeline reminders",
-      "Lead reactivation",
-      "Response handling",
+      "Connection strategy",
+      "Message sequences",
+      "Follow-ups",
+      "Conversation tracking",
     ],
   },
   {
     number: "06",
-    title: "CRM Management",
+    title: "CRM Management and Follow-Up",
     description:
-      "Every lead, reply, call, and opportunity stays organized inside a clean pipeline instead of scattered chats.",
-    points: ["CRM updates", "Pipeline tracking", "Lead status tagging", "Reporting"],
+      "We track every prospect, update lead status, manage follow-ups, and keep your pipeline organized.",
+    points: [
+      "CRM updates",
+      "Lead tracking",
+      "Follow-up management",
+      "Pipeline organization",
+    ],
+  },
+  {
+    number: "07",
+    title: "Walkthrough and Site Visit Booking",
+    description:
+      "Perfect for commercial cleaning, roofing, solar, real estate, SaaS, and field service companies that need online or in-person appointments or walkthroughs.",
+    points: [
+      "Site visits",
+      "Walkthrough booking",
+      "Online appointments",
+      "Field services",
+    ],
   },
 ];
 
@@ -81,45 +103,13 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-[#05070d] text-white">
       <Navbar />
 
-      <section className="relative overflow-hidden px-6 pt-40 pb-24 md:pt-44">
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.035)_1px,transparent_1px)] bg-[size:70px_70px]" />
-        <div className="pointer-events-none absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[130px]" />
-
-        <div className="relative mx-auto max-w-6xl text-center">
-          <p className="mb-8 text-sm font-semibold uppercase tracking-[0.45em] text-cyan-300">
-           LEADSRIFT SERVICES
-        </p>
-
-          <h1 className="mx-auto max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">
-            Done-for-you outbound systems built to turn cold prospects into
-            qualified appointments.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/60 md:text-lg">
-            We handle the outreach engine behind your growth — cold calling,
-            email, LinkedIn, qualification, follow-up, CRM management, and
-            appointment setting.
+      <section className="px-6 pt-40 pb-24">
+        <div className="mx-auto mb-12 max-w-6xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.45em] text-cyan-300">
+            LEADSRIFT SERVICES
           </p>
-
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="rounded-full bg-cyan-300 px-7 py-3 text-sm font-semibold text-black shadow-[0_0_35px_rgba(34,211,238,0.35)] transition hover:bg-white"
-            >
-              Book Free Strategy Call
-            </Link>
-
-            <Link
-              href="/packages"
-              className="rounded-full border border-cyan-300/30 px-7 py-3 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300/70 hover:bg-cyan-300/10"
-            >
-              View Packages
-            </Link>
-          </div>
         </div>
-      </section>
 
-      <section className="px-6 pb-24">
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <article
@@ -132,7 +122,9 @@ export default function ServicesPage() {
                 {service.number}
               </p>
 
-              <h2 className="text-2xl font-semibold">{service.title}</h2>
+              <h2 className="text-2xl font-semibold">
+                {service.title}
+              </h2>
 
               <p className="mt-4 min-h-[96px] text-sm leading-7 text-white/60">
                 {service.description}
@@ -175,6 +167,7 @@ export default function ServicesPage() {
                 <span className="text-sm font-semibold text-cyan-300">
                   {String(index + 1).padStart(2, "0")}
                 </span>
+
                 <span className="text-white/75">{item}</span>
               </div>
             ))}

@@ -4,67 +4,63 @@ import Footer from "@/components/Footer";
 
 const packages = [
   {
-    name: "Starter",
-    tag: "For early outbound testing",
-    description:
-      "A focused outbound setup for businesses that want to validate offers, start conversations, and build pipeline momentum.",
-    bestFor: "New campaigns, small teams, early validation",
+    name: "Starter Outreach",
+    tag: "For small businesses testing outbound",
+    description: "For small businesses testing outbound.",
+    bestFor: "Small businesses, first outbound campaigns, early market testing",
     features: [
-      "Cold email outreach",
-      "Basic lead qualification",
-      "Follow-up sequences",
-      "Reply tracking",
-      "CRM status updates",
-      "Weekly performance snapshot",
+      "Lead list building",
+      "Cold calling",
+      "Basic reporting",
+      "Appointment setting",
+      "Weekly update",
     ],
   },
   {
-    name: "Growth",
+    name: "Growth Engine",
     tag: "Most popular",
-    description:
-      "A stronger multi-channel system built for consistent appointment flow across email, LinkedIn, follow-up, and qualification.",
-    bestFor: "Businesses ready for consistent booked calls",
+    description: "For companies that want consistent booked appointments.",
+    bestFor: "Companies ready for steady appointment flow and follow-up support",
     featured: true,
     features: [
-      "Cold email outreach",
+      "Cold calling",
+      "Email outreach",
       "LinkedIn outreach",
-      "Lead qualification",
+      "CRM tracking",
       "Follow-up management",
-      "CRM pipeline management",
-      "Appointment setting",
       "Weekly reporting",
-      "Campaign optimization",
+      "Dedicated campaign manager",
     ],
   },
   {
-    name: "Scale",
-    tag: "For serious pipeline growth",
-    description:
-      "A complete outbound growth engine for teams that want aggressive execution, cleaner systems, and higher-volume opportunity creation.",
-    bestFor: "Scaling teams, agencies, B2B service companies",
+    name: "Premium Revenue Partner",
+    tag: "For full pipeline support",
+    description: "For serious companies that want full pipeline support.",
+    bestFor: "Serious companies that want deeper targeting, scaling, and revenue support",
     features: [
-      "Cold calling",
-      "Cold email outreach",
-      "LinkedIn outreach",
-      "Advanced lead qualification",
-      "Multi-touch follow-up",
-      "CRM management",
-      "Appointment setting",
-      "Pipeline reporting",
-      "Campaign iteration",
+      "Everything in Growth Engine",
+      "Advanced targeting",
+      "Appointment quality control",
+      "CRM setup",
+      "Sales script improvement",
+      "Call recordings",
+      "Weekly strategy call",
+      "Pipeline review",
+      "Dedicated callers",
+      "Priority campaign scaling",
     ],
   },
 ];
 
 const included = [
+  "Lead List Building",
   "Cold Calling",
   "Email Outreach",
   "LinkedIn Outreach",
-  "Lead Qualification",
-  "Follow-Up",
-  "CRM Management",
+  "CRM Tracking",
+  "Follow-Up Management",
   "Appointment Setting",
-  "Pipeline Tracking",
+  "Weekly Reporting",
 ];
 
 export default function PackagesPage() {
@@ -72,46 +68,13 @@ export default function PackagesPage() {
     <main className="min-h-screen bg-[#05070d] text-white">
       <Navbar />
 
-      <section className="relative overflow-hidden px-6 pt-44 pb-24 md:pt-48">
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.035)_1px,transparent_1px)] bg-[size:70px_70px]" />
-        <div className="pointer-events-none absolute left-1/2 top-20 h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px]" />
-        <div className="pointer-events-none absolute right-[-120px] top-40 h-72 w-72 rounded-full border border-cyan-300/10" />
-        <div className="pointer-events-none absolute left-[-120px] bottom-10 h-72 w-72 rounded-full border border-cyan-300/10" />
-
-        <div className="relative mx-auto max-w-6xl text-center">
-          <p className="mb-10 text-sm font-semibold uppercase tracking-[0.5em] text-cyan-300">
-        LEADSRIFT PACKAGES
-        </p>
-
-          <h1 className="mx-auto max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">
-            Choose the outbound system that matches your growth stage.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/60 md:text-lg">
-            From campaign validation to serious appointment flow, LeadsRift
-            gives you a structured outbound engine without hiring an internal
-            outreach team.
+      <section className="px-6 pt-40 pb-24">
+        <div className="mx-auto mb-14 max-w-6xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.45em] text-cyan-300">
+            LEADSRIFT PACKAGES
           </p>
-
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="rounded-full bg-cyan-300 px-7 py-3 text-sm font-semibold text-black shadow-[0_0_35px_rgba(34,211,238,0.35)] transition hover:bg-white"
-            >
-              Book Free Strategy Call
-            </Link>
-
-            <Link
-              href="/services"
-              className="rounded-full border border-cyan-300/30 px-7 py-3 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300/70 hover:bg-cyan-300/10"
-            >
-              Explore Services
-            </Link>
-          </div>
         </div>
-      </section>
 
-      <section className="px-6 pb-24">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
           {packages.map((item) => (
             <article
@@ -139,7 +102,7 @@ export default function PackagesPage() {
 
                 <h2 className="text-3xl font-semibold">{item.name}</h2>
 
-                <p className="mt-4 min-h-[112px] text-sm leading-7 text-white/60">
+                <p className="mt-4 min-h-[70px] text-sm leading-7 text-white/60">
                   {item.description}
                 </p>
 
@@ -147,6 +110,7 @@ export default function PackagesPage() {
                   <p className="text-xs uppercase tracking-[0.25em] text-white/35">
                     Best For
                   </p>
+
                   <p className="mt-2 text-sm leading-6 text-white/75">
                     {item.bestFor}
                   </p>
@@ -188,13 +152,13 @@ export default function PackagesPage() {
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">
-              Every package is built around pipeline, not vanity activity.
+              Every package is built around qualified appointments, not random outreach.
             </h2>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/60">
-              We do not sell random outreach. We build a repeatable system for
-              starting conversations, filtering opportunities, and booking
-              qualified appointments.
+              Each plan gives your business a structured outreach engine for
+              finding prospects, starting conversations, tracking follow-ups,
+              and booking qualified opportunities into your calendar.
             </p>
           </div>
 
@@ -207,6 +171,7 @@ export default function PackagesPage() {
                 <p className="text-sm font-semibold text-cyan-300">
                   {String(index + 1).padStart(2, "0")}
                 </p>
+
                 <p className="mt-4 text-white/80">{item}</p>
               </div>
             ))}
@@ -218,16 +183,16 @@ export default function PackagesPage() {
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
           {[
             {
-              title: "Starter",
-              copy: "Best when you need market signal, offer testing, and a cleaner first outbound motion.",
+              title: "Starter Outreach",
+              copy: "Best when you want to test outbound, build lead lists, start cold calling, and get basic reporting without a heavy setup.",
             },
             {
-              title: "Growth",
-              copy: "Best when you want consistent conversations and a more complete appointment-setting pipeline.",
+              title: "Growth Engine",
+              copy: "Best when you want consistent booked appointments through cold calling, email, LinkedIn, CRM tracking, and managed follow-up.",
             },
             {
-              title: "Scale",
-              copy: "Best when you want higher-volume execution across multiple outbound channels.",
+              title: "Premium Revenue Partner",
+              copy: "Best when you want full pipeline support with advanced targeting, appointment quality control, sales script improvement, and priority scaling.",
             },
           ].map((item) => (
             <div
@@ -235,6 +200,7 @@ export default function PackagesPage() {
               className="rounded-3xl border border-cyan-300/10 bg-white/[0.03] p-7"
             >
               <h3 className="text-2xl font-semibold">{item.title}</h3>
+
               <p className="mt-4 text-sm leading-7 text-white/60">
                 {item.copy}
               </p>
@@ -246,7 +212,7 @@ export default function PackagesPage() {
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-5xl rounded-[2rem] border border-cyan-300/15 bg-white/[0.03] p-8 text-center shadow-[0_0_70px_rgba(34,211,238,0.08)] md:p-14">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
-            Not sure which one fits?
+            Not sure which package fits?
           </p>
 
           <h2 className="mt-5 text-3xl font-semibold leading-tight md:text-5xl">
@@ -254,8 +220,8 @@ export default function PackagesPage() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl leading-7 text-white/60">
-            The right package depends on your offer, market, sales capacity,
-            and how aggressive your growth target is.
+            The right package depends on your market, sales capacity, service
+            area, and how much appointment volume you want to generate.
           </p>
 
           <Link
