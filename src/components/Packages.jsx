@@ -1,3 +1,4 @@
+import Link from "next/link";
 const packages = [
   {
     name: "Starter Outreach",
@@ -130,8 +131,21 @@ export default function Packages() {
               </a>
             </div>
           ))}
+          <div className="mt-12 text-center">
+  <Link
+    href="/bonuses"
+    className="inline-flex items-center gap-3 rounded-full border border-cyan-300/30 bg-white/[0.03] px-8 py-4 text-sm font-semibold text-cyan-100 transition duration-300 hover:border-cyan-300/70 hover:bg-cyan-300/10"
+  >
+    See Everything Included
+
+    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-cyan-300 text-black">
+      ↗
+    </span>
+  </Link>
+</div>
         </div>
       </div>
+      
     </section>
   );
 }
