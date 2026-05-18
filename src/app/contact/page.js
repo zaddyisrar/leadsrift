@@ -201,7 +201,6 @@ export default function ContactPage() {
           </Link>
         </div>
       </section>
-
       <Footer />
     </main>
   );
