@@ -23,40 +23,9 @@ const companies = [
   { name: "Dust Details", logo: "/logos/dustdetails.png" },
 ];
 
-const rowOne = companies.slice(0, 9);
-const rowTwo = companies.slice(9);
-
-function LogoRow({ items, reverse = false }) {
-  const marqueeItems = [...items, ...items];
-
-  return (
-    <div className="relative overflow-hidden">
-      <div
-        className={`flex w-max items-center gap-5 ${
-          reverse ? "animate-marquee-reverse" : "animate-marquee"
-        }`}
-      >
-        {marqueeItems.map((company, index) => (
-          <div
-            key={`${company.name}-${index}`}
-            className="flex h-28 min-w-[280px] items-center justify-center rounded-[1.7rem] border border-white/10 bg-black/25 px-8 transition duration-300 hover:border-cyan-300/40 hover:bg-cyan-300/[0.04]"
-          >
-            <Image
-              src={company.logo}
-              alt={company.name}
-              width={220}
-              height={100}
-              unoptimized
-              className="max-h-20 w-auto object-contain opacity-90 transition duration-300 hover:scale-110 hover:opacity-100"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function ProofBar() {
+  const marqueeCompanies = [...companies, ...companies];
+
   return (
     <section className="relative overflow-hidden border-b border-cyan-500/10 bg-[#03060b] px-6 py-16">
       <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[120px]" />
@@ -72,14 +41,37 @@ export default function ProofBar() {
           </h2>
         </div>
 
-        <div className="relative mt-10 overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.03] px-0 py-6 backdrop-blur-xl">
+        <div className="relative mt-10 overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.03] px-0 py-7 backdrop-blur-xl">
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-28 bg-gradient-to-r from-[#03060b] to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-28 bg-gradient-to-l from-[#03060b] to-transparent" />
 
-          <div className="space-y-5">
-            <LogoRow items={rowOne} />
-            <LogoRow items={rowTwo} reverse />
+          <div className="flex w-max animate-marquee items-center gap-14">
+            {marqueeCompanies.map((company, index) => (
+              <div
+                key={`${company.name}-${index}`}
+                className="flex min-w-[285px] items-center justify-center py-5"
+              >
+                <Image
+                  src={company.logo}
+                  alt={company.name}
+                  width={285}
+                  height={130}
+                  unoptimized
+                  className="max-h-28 w-auto object-contain opacity-90 transition duration-300 hover:scale-110 hover:opacity-100 hover:drop-shadow-[0_0_28px_rgba(34,211,238,0.35)]"
+                />
+              </div>
+            ))}
           </div>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <a
+            href="#reviews"
+            className="group inline-flex items-center gap-3 rounded-[1.2rem] border border-cyan-300/20 bg-cyan-300/[0.06] px-6 py-3 text-sm font-medium text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.08)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/50 hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.22)]"
+          >
+            See What Our Clients Say About Us
+            <span className="transition group-hover:translate-x-1">→</span>
+          </a>
         </div>
       </div>
     </section>

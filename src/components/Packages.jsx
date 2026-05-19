@@ -69,28 +69,38 @@ export default function Packages() {
           </p>
         </div>
 
-        <div className="mb-12 overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-cyan-300/[0.05] p-6 shadow-[0_0_40px_rgba(34,211,238,0.08)] backdrop-blur-xl md:p-7">
-          <div className="flex flex-col items-start gap-5 md:flex-row md:items-center">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-3xl shadow-[0_0_25px_rgba(34,211,238,0.18)]">
-              🛡️
-            </div>
+        <div className="mb-14 flex justify-center">
 
-            <div>
-              <h3 className="text-2xl font-semibold text-white">
-                30-Day Money-Back Guarantee
-              </h3>
+  <div className="flex items-center gap-6 rounded-[2rem] border border-cyan-300/15 bg-cyan-300/[0.04] px-8 py-6 shadow-[0_0_40px_rgba(34,211,238,0.08)] backdrop-blur-xl">
 
-              <p className="mt-3 max-w-4xl leading-8 text-white/65">
-                If we don&apos;t book{" "}
-                <span className="font-semibold text-cyan-300">
-                  10+ qualified appointments
-                </span>{" "}
-                in your first 30 days, you get every dollar back. No contracts.
-                No catch. No questions asked.
-              </p>
-            </div>
-          </div>
-        </div>
+    <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-[1.5rem] border border-cyan-300/20 bg-cyan-300/[0.05] shadow-[0_0_30px_rgba(34,211,238,0.08)]">
+
+      <span className="text-5xl">
+        🛡️
+      </span>
+
+    </div>
+
+    <div className="max-w-[620px] text-center">
+
+      <h3 className="text-4xl font-bold text-white">
+        30-Day Money-Back Guarantee
+      </h3>
+
+      <p className="mt-4 max-w-[580px] text-lg leading-9 text-white/65">
+        If we don't book
+        <span className="font-semibold text-cyan-300">
+          {" "}10+ qualified appointments{" "}
+        </span>
+        in your first 30 days, you get every dollar back.
+        No contracts. No catch. No questions asked.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
 
         <div className="grid items-start gap-6 lg:grid-cols-3">
           {packages.map((plan) => (
