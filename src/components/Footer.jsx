@@ -1,5 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaXTwitter,
+  FaLinkedinIn,
+  FaTiktok,
+} from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -27,11 +34,59 @@ export default function Footer() {
                 without hiring an in-house sales team.
               </p>
 
-              <div className="mt-8 space-y-3 text-sm text-gray-400">
-                <p>No Setup Fees</p>
-                <p>Cancel Anytime</p>
-                <p>Performance-Driven Outreach</p>
-              </div>
+              <div className="mt-10">
+  <p className="mb-5 text-xs uppercase tracking-[0.3em] text-cyan-300">
+    CONNECT WITH US
+  </p>
+
+  <div className="flex flex-wrap gap-3">
+
+    <a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
+    >
+      <FaFacebookF className="transition group-hover:scale-110" />
+    </a>
+    <a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
+    >
+      <FaInstagram className="transition group-hover:scale-110" />
+    </a>
+
+    <a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
+    >
+      <FaXTwitter className="transition group-hover:scale-110" />
+    </a>
+
+    <a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
+    >
+      <FaLinkedinIn className="transition group-hover:scale-110" />
+    </a>
+
+    <a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
+    >
+      <FaTiktok className="transition group-hover:scale-110" />
+    </a>
+
+  </div>
+</div>
             </div>
 
             <div>
@@ -41,20 +96,32 @@ export default function Footer() {
 
               <div className="space-y-4 text-gray-300">
                 <Link href="/" className="block hover:text-cyan-300">
-                  Home
-                </Link>
-                <Link href="/services" className="block hover:text-cyan-300">
-                  Services
-                </Link>
-                <Link href="/industries" className="block hover:text-cyan-300">
-                  Industries
-                </Link>
-                <Link href="/packages" className="block hover:text-cyan-300">
-                  Packages
-                </Link>
-                <Link href="/contact" className="block hover:text-cyan-300">
-                  Contact
-                </Link>
+  Home
+</Link>
+
+<Link href="/about" className="block hover:text-cyan-300">
+  About
+</Link>
+
+<Link href="/services" className="block hover:text-cyan-300">
+  Services
+</Link>
+
+<Link href="/industries" className="block hover:text-cyan-300">
+  Industries
+</Link>
+
+<Link href="/packages" className="block hover:text-cyan-300">
+  Packages
+</Link>
+
+<Link href="/reviews" className="block hover:text-cyan-300">
+  Reviews
+</Link>
+
+<Link href="/contact" className="block hover:text-cyan-300">
+  Contact
+</Link>
               </div>
             </div>
 
