@@ -1,3 +1,4 @@
+import BonusStack from "@/components/BonusStack";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProofBar from "@/components/ProofBar";
@@ -17,7 +18,7 @@ export default function Home() {
       <Hero />
       <ProofBar />
       <Problem />
-      <Process />
+      <BonusStack />
       <Services />
       <Industries />
       <Packages />

@@ -63,7 +63,7 @@ export default function Hero() {
         </div>
 
         <h1 className="mx-auto max-w-6xl text-5xl font-semibold leading-[0.92] tracking-tight text-white md:text-7xl lg:text-[88px]">
-          We Book Qualified Sales Appointments for Businesses {" "}
+          We Book Qualified B2B/B2C Appointments without{" "}
           <span className="text-cyan-300 drop-shadow-[0_0_35px_rgba(34,211,238,0.4)]">
             Hiring An In-House Sales Team
           </span>
@@ -72,7 +72,7 @@ export default function Hero() {
         <p className="mx-auto mt-8 max-w-3xl text-base leading-9 text-gray-300 md:text-lg">
           LeadsRift builds and manages done-for-you outreach systems using
           cold calling, email marketing, and LinkedIn outreach to help B2B and
-          B2C companies fill their calendar with qualified prospects in their
+          B2C Businesses fill their calendar with qualified prospects in their
           target service areas.
         </p>
 

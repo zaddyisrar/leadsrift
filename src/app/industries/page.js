@@ -74,26 +74,6 @@ const industries = [
   },
 
   {
-    category: "Property Services",
-    items: [
-      "Landscaping",
-      "Irrigation Contractors",
-      "Handyman Services",
-      "Property Repair",
-    ],
-  },
-
-  {
-    category: "Legal Services",
-    items: [
-      "Corporate Law Firms",
-      "Personal Injury",
-      "Real Estate Law",
-      "Business Litigation",
-    ],
-  },
-
-  {
     category: "Accounting & Tax",
     items: [
       "CPA Firms",
@@ -104,32 +84,12 @@ const industries = [
   },
 
   {
-    category: "Business Consulting",
-    items: [
-      "Management Consulting",
-      "Strategic Advisory",
-      "Operations Consultants",
-      "Executive Coaching",
-    ],
-  },
-
-  {
     category: "Marketing & Advertising",
     items: [
       "Digital Marketing",
       "SEO & PPC Agencies",
       "Branding Agencies",
       "Performance Marketing",
-    ],
-  },
-
-  {
-    category: "Manufacturing",
-    items: [
-      "Industrial Manufacturing",
-      "OEM Manufacturers",
-      "Contract Manufacturers",
-      "Heavy Equipment Dealers",
     ],
   },
 
@@ -170,16 +130,6 @@ const industries = [
       "Online Education",
       "Certification Providers",
       "EdTech Companies",
-    ],
-  },
-
-  {
-    category: "Hospitality & Hotels",
-    items: [
-      "Hotels & Resorts",
-      "Boutique Hotels",
-      "Hospitality Management",
-      "Multi-Location Groups",
     ],
   },
 
@@ -232,16 +182,6 @@ const industries = [
       "Employee Benefits",
     ],
   },
-
-  {
-    category: "Enterprise & Corporate",
-    items: [
-      "Enterprise Service Providers",
-      "Outsourcing Firms",
-      "BPO Companies",
-      "National Service Providers",
-    ],
-  },
 ];
 
 const bestFit = [
@@ -265,7 +205,7 @@ export default function IndustriesPage() {
           <h1 className="mx-auto mt-6 max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">
             Powering Growth Across{" "}
             <span className="text-cyan-300">
-              24+ Industries
+              18+ Industries
             </span>
           </h1>
         </div>

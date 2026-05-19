@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 const steps = [
   {
     number: "01",
-    title: "Strategy Call",
+    title: "Strategy Mapping",
     label: "System initialized",
     log: "We map your offer, target market, current pipeline, sales capacity, and growth objectives before touching outreach.",
     details: [

@@ -11,7 +11,7 @@ const industries = [
   { name: "Real Estate", icon: "▥", position: "left-[10%] bottom-[14%]" },
   { name: "Dental Clinics", icon: "♢", position: "left-[3%] top-[45%]" },
   { name: "Local Services", icon: "✕", position: "left-[8%] top-[28%]" },
-  { name: "Restaurants", icon: "⋔", position: "left-[18%] top-[12%]" },
+  { name: "Managed IT", icon: "⋔", position: "left-[18%] top-[12%]" },
   { name: "Cybersecurity", icon: "◈", position: "right-[26%] top-[8%]" },
   { name: "Property Management", icon: "▣", position: "left-[18%] bottom-[3%]" },
   { name: "Insurance", icon: "◉", position: "right-[20%] top-[58%]" },
@@ -48,24 +48,13 @@ export default function Industries() {
 
           <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
             Powering Growth Across{" "}
-            <span className="text-cyan-300">24+ Industries</span>
+            <span className="text-cyan-300">18+ Industries</span>
           </h2>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-gray-300">
             LeadsRift adapts outbound systems around your market, offer,
             decision-makers, service area, and follow-up cycle.
           </p>
-
-          <div className="mt-8 flex max-w-xl items-center gap-5 rounded-[2rem] border border-cyan-300/15 bg-cyan-300/[0.05] p-5 backdrop-blur-xl">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-cyan-300/35 bg-black/35 text-2xl text-cyan-300 shadow-[0_0_22px_rgba(34,211,238,0.22)]">
-              ✦
-            </div>
-
-            <p className="text-sm leading-7 text-cyan-50">
-              Best for businesses where one qualified conversation can create
-              real pipeline value.
-            </p>
-          </div>
 
           <Link
             href="/industries"

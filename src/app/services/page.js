@@ -5,14 +5,14 @@ import Footer from "@/components/Footer";
 const services = [
   {
     number: "01",
-    title: "Cold Calling Appointment Setting",
+    title: "Cold Calling Appointment Setting & Walkthroughs",
     description:
-      "Our trained callers contact your target prospects, qualify interest, handle objections, and schedule appointments directly into your calendar.",
+      "Our outbound specialists connect with qualified prospects, handle objections, and book high-quality appointments directly into your calendar.",
     points: [
-      "Prospect calling",
-      "Qualification",
-      "Objection handling",
-      "Appointment booking",
+      "Targeted prospect outreach",
+      "Lead qualification & intent verification",
+      "Objection handling & conversation management",
+      "Qualified appointment booking"
     ],
   },
   {
@@ -73,18 +73,6 @@ const services = [
       "Lead tracking",
       "Follow-up management",
       "Pipeline organization",
-    ],
-  },
-  {
-    number: "07",
-    title: "Walkthrough and Site Visit Booking",
-    description:
-      "Perfect for commercial cleaning, roofing, solar, real estate, SaaS, and field service companies that need online or in-person appointments or walkthroughs.",
-    points: [
-      "Site visits",
-      "Walkthrough booking",
-      "Online appointments",
-      "Field services",
     ],
   },
 ];
@@ -154,7 +142,7 @@ export default function ServicesPage() {
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">
-              Not just outreach. A complete appointment pipeline.
+              More than outreach. A complete appointment generation system.
             </h2>
           </div>
 

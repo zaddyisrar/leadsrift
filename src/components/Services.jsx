@@ -1,80 +1,134 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 
 const services = [
   {
-    title: "Cold Calling Appointment Setting",
-    desc: "Our trained callers contact your target prospects, qualify interest, handle objections, and schedule appointments directly into your calendar.",
+    number: "01",
+    title: "Cold Calling Appointment Setting & Walkthroughs",
+    preview: "Connect with qualified prospects and fill your calendar.",
+    points: [
+      "Targeted prospect outreach",
+      "Lead qualification & intent verification",
+      "Objection handling & conversation management",
+      "Qualified appointment booking",
+    ],
   },
   {
+    number: "02",
     title: "B2B Lead Generation",
-    desc: "We build targeted lead lists based on industry, location, company size, decision-maker role, and service area.",
+    preview: "Target decision-makers based on market fit.",
+    points: [
+      "Industry targeting",
+      "Decision makers",
+      "Company filtering",
+      "Lead research",
+    ],
   },
   {
+    number: "03",
     title: "B2C Lead Generation",
-    desc: "We help local service businesses reach homeowners, property owners, and potential customers in specific geographic areas.",
+    preview: "Reach homeowners and customers in local areas.",
+    points: [
+      "Homeowner targeting",
+      "Local markets",
+      "Service areas",
+      "Lead sourcing",
+    ],
+  },
+  {
+    number: "04",
+    title: "Email Marketing Outreach",
+    preview: "Generate conversations through personalized outreach.",
+    points: [
+      "Email campaigns",
+      "Personalized messaging",
+      "Reply tracking",
+      "Follow-up sequences",
+    ],
+  },
+  {
+    number: "05",
+    title: "LinkedIn Outreach",
+    preview: "Turn LinkedIn connections into sales opportunities.",
+    points: [
+      "Connection strategy",
+      "Message sequences",
+      "Follow-ups",
+      "Conversation tracking",
+    ],
+  },
+  {
+    number: "06",
+    title: "CRM Management and Follow-Up",
+    preview: "Keep your pipeline organized and active.",
+    points: [
+      "CRM updates",
+      "Lead tracking",
+      "Follow-up management",
+      "Pipeline organization",
+    ],
   },
 ];
 
 export default function Services() {
+  const [open, setOpen] = useState(null);
+
   return (
-    <section
-      id="services"
-      className="relative overflow-hidden border-b border-cyan-500/10 bg-[#05070d] px-6 py-24"
-    >
-      <div className="pointer-events-none absolute left-0 top-20 h-80 w-80 rounded-full bg-cyan-300/10 blur-[130px]" />
-      <div className="pointer-events-none absolute right-0 bottom-0 h-72 w-72 rounded-full bg-cyan-300/8 blur-[130px]" />
+    <section className="relative overflow-hidden border-b border-cyan-500/10 bg-[#03060b] px-6 py-24">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.04)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-cyan-300">
-            Services
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-sm uppercase tracking-[0.4em] text-cyan-300">
+            OUR CORE SERVICES
           </p>
 
-          <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            Outbound Services Built To{" "}
-            <span className="text-cyan-300">Book Qualified Appointments</span>
+          <h2 className="text-5xl font-semibold text-white">
+            Outbound Systems Built To Generate Opportunities
           </h2>
-
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            We handle the outreach, lead generation, follow-up, and appointment
-            setting system behind your growth.
-          </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group relative overflow-hidden rounded-[1.5rem] border border-cyan-300/10 bg-white/[0.03] p-5 transition duration-500 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-cyan-300/[0.05]"
+              className="rounded-[2rem] border border-cyan-300/10 bg-white/[0.03] p-7 backdrop-blur-xl transition hover:-translate-y-2 hover:border-cyan-300/30"
             >
-              <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-cyan-300/10 blur-[70px] opacity-0 transition duration-500 group-hover:opacity-100" />
-
-              <div className="relative mb-4 flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-300/25 bg-cyan-300/10 text-xs font-bold text-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.16)]">
-                  0{index + 1}
-                </span>
-
-                <div className="h-px flex-1 bg-gradient-to-r from-cyan-300/30 to-transparent" />
+              <div className="mb-6 text-4xl font-bold text-cyan-300">
+                {service.number}
               </div>
 
-              <h3 className="relative text-xl font-semibold text-white">
+              <h3 className="text-xl font-semibold text-white">
                 {service.title}
               </h3>
 
-              <p className="relative mt-3 text-sm leading-7 text-gray-400">
-                {service.desc}
+              <p className="mt-4 leading-7 text-white/55">
+                {service.preview}
               </p>
+
+              {open === index && (
+                <div className="mt-6 space-y-3">
+                  {service.points.map((point) => (
+                    <div
+                      key={point}
+                      className="flex items-center gap-3 text-white/75"
+                    >
+                      <div className="h-2 w-2 rounded-full bg-cyan-300" />
+                      {point}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <button
+                onClick={() => setOpen(open === index ? null : index)}
+                className="mt-8 text-cyan-300 transition hover:text-white"
+              >
+                {open === index ? "Show Less" : "See More →"}
+              </button>
             </div>
           ))}
-        </div>
-
-        <div className="mt-10 flex justify-center">
-          <Link
-            href="/services"
-            className="rounded-full border border-cyan-300/45 bg-cyan-300/10 px-7 py-3.5 text-center text-sm font-bold text-cyan-100 shadow-[0_0_28px_rgba(34,211,238,0.18)] transition duration-300 hover:border-cyan-300/80 hover:bg-cyan-300 hover:text-black hover:shadow-[0_0_35px_rgba(34,211,238,0.35)]"
-          >
-            Explore More Services
-          </Link>
         </div>
       </div>
     </section>
