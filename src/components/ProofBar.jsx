@@ -13,7 +13,6 @@ const companies = [
   { name: "I & G Cleaning Services", logo: "/logos/iandg.png" },
   { name: "Optimal Cleaning Services", logo: "/logos/optimal.png" },
   { name: "Tetra Maintenance", logo: "/logos/tetra.png" },
-  { name: "New Moon Janitorial", logo: "/logos/newmoon.png" },
   { name: "All Janitorial Service", logo: "/logos/alljanitorial.png" },
   { name: "Stratus Building Solutions", logo: "/logos/stratus.png" },
   { name: "Smoky Mountain Commercial", logo: "/logos/smoky.png" },
