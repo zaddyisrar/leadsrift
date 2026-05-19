@@ -1,26 +1,65 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import {
   FaFacebookF,
   FaInstagram,
-  FaXTwitter,
   FaLinkedinIn,
   FaTiktok,
-} from "react-icons/fa6";
+} from "react-icons/fa";
+
+import { FaXTwitter } from "react-icons/fa6";
+
+const socials = [
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61578643498934",
+    icon: <FaFacebookF />,
+  },
+
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/leadsrift/",
+    icon: <FaInstagram />,
+  },
+
+  {
+    name: "X",
+    href: "https://x.com/leadsrift",
+    icon: <FaXTwitter />,
+  },
+
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/leadsrift1/",
+    icon: <FaLinkedinIn />,
+  },
+
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@leadsrift",
+    icon: <FaTiktok />,
+  },
+];
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#03060b] px-6 pt-20 pb-8">
+
       <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-300/10 blur-[140px]" />
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.025)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
       <div className="relative mx-auto max-w-7xl">
+
         <div className="mx-auto mb-10 h-px max-w-6xl bg-gradient-to-r from-transparent via-cyan-300 to-transparent shadow-[0_0_30px_rgba(34,211,238,0.8)]" />
 
         <div className="rounded-[2rem] border border-cyan-300/15 bg-white/[0.02] p-8 shadow-[0_0_60px_rgba(34,211,238,0.05)] backdrop-blur-xl md:p-10">
+
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
             <div className="pr-8 lg:border-r lg:border-white/10">
+
               <Image
                 src="/leadsrift-logo.png"
                 alt="LeadsRift"
@@ -35,134 +74,126 @@ export default function Footer() {
               </p>
 
               <div className="mt-10">
-  <p className="mb-5 text-xs uppercase tracking-[0.3em] text-cyan-300">
-    CONNECT WITH US
-  </p>
 
-  <div className="flex flex-wrap gap-3">
+                <p className="mb-5 text-xs uppercase tracking-[0.3em] text-cyan-300">
+                  CONNECT WITH US
+                </p>
 
-    <a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
-    >
-      <FaFacebookF className="transition group-hover:scale-110" />
-    </a>
-    <a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
-    >
-      <FaInstagram className="transition group-hover:scale-110" />
-    </a>
+                <div className="flex flex-wrap gap-3">
 
-    <a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
-    >
-      <FaXTwitter className="transition group-hover:scale-110" />
-    </a>
+                  {socials.map((social) => (
 
-    <a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
-    >
-      <FaLinkedinIn className="transition group-hover:scale-110" />
-    </a>
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.name}
+                      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]"
+                    >
+                      {social.icon}
+                    </a>
 
-    <a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/15 bg-white/[0.03] text-cyan-300 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
-    >
-      <FaTiktok className="transition group-hover:scale-110" />
-    </a>
+                  ))}
 
-  </div>
-</div>
+                </div>
+
+              </div>
+
             </div>
 
             <div>
+
               <h4 className="mb-6 text-sm uppercase tracking-[0.2em] text-cyan-300">
                 Company
               </h4>
 
               <div className="space-y-4 text-gray-300">
+
                 <Link href="/" className="block hover:text-cyan-300">
-  Home
-</Link>
+                  Home
+                </Link>
 
-<Link href="/about" className="block hover:text-cyan-300">
-  About
-</Link>
+                <Link href="/about" className="block hover:text-cyan-300">
+                  About
+                </Link>
 
-<Link href="/services" className="block hover:text-cyan-300">
-  Services
-</Link>
+                <Link href="/services" className="block hover:text-cyan-300">
+                  Services
+                </Link>
 
-<Link href="/industries" className="block hover:text-cyan-300">
-  Industries
-</Link>
+                <Link href="/industries" className="block hover:text-cyan-300">
+                  Industries
+                </Link>
 
-<Link href="/packages" className="block hover:text-cyan-300">
-  Packages
-</Link>
+                <Link href="/packages" className="block hover:text-cyan-300">
+                  Packages
+                </Link>
 
-<Link href="/reviews" className="block hover:text-cyan-300">
-  Reviews
-</Link>
+                <Link href="/reviews" className="block hover:text-cyan-300">
+                  Reviews
+                </Link>
 
-<Link href="/contact" className="block hover:text-cyan-300">
-  Contact
-</Link>
+                <Link href="/contact" className="block hover:text-cyan-300">
+                  Contact
+                </Link>
+
               </div>
+
             </div>
 
             <div>
+
               <h4 className="mb-6 text-sm uppercase tracking-[0.2em] text-cyan-300">
                 Services
               </h4>
 
               <div className="space-y-4 text-gray-300">
+
                 <Link href="/services" className="block hover:text-cyan-300">
                   Appointments
                 </Link>
+
                 <Link href="/services" className="block hover:text-cyan-300">
                   Cold Calling
                 </Link>
+
                 <Link href="/services" className="block hover:text-cyan-300">
                   Email Outreach
                 </Link>
+
                 <Link href="/services" className="block hover:text-cyan-300">
                   LinkedIn Outreach
                 </Link>
+
                 <Link href="/services" className="block hover:text-cyan-300">
                   CRM Follow-Up
                 </Link>
+
               </div>
+
             </div>
 
             <div>
+
               <h4 className="mb-6 text-sm uppercase tracking-[0.2em] text-cyan-300">
                 Contact
               </h4>
 
               <div className="space-y-6">
+
                 <div>
                   <p className="text-white">info@leadsrift.com</p>
                   <span className="text-sm text-cyan-300">Business Email</span>
                 </div>
 
                 <div>
-                  <p className="text-white">+1 (575) 414-8669</p>
-                  <span className="text-sm text-gray-400">Contact Number</span>
+                  <p className="text-white">
+                    +1 (575) 414-8669
+                  </p>
+                  <span className="text-sm text-gray-400">
+                    Contact Number
+                  </span>
                 </div>
 
                 <div>
@@ -171,39 +202,34 @@ export default function Footer() {
                     <br />
                     Albuquerque, NM 87110, USA
                   </p>
+
                   <span className="text-sm text-gray-400">
                     Global Operations
                   </span>
                 </div>
+
               </div>
+
             </div>
+
           </div>
 
           <div className="mt-10 border-t border-white/10 pt-6">
-            <div className="flex flex-col items-center justify-between gap-5 text-sm text-gray-400 md:flex-row">
-              <p>© 2026 LeadsRift LLC. All Rights Reserved.</p>
 
-              <div className="flex flex-wrap justify-center gap-6">
-                <Link href="/privacy" className="hover:text-cyan-300">
-                  Privacy
-                </Link>
-                <Link href="/terms" className="hover:text-cyan-300">
-                  Terms
-                </Link>
-                <Link href="/compliance" className="hover:text-cyan-300">
-                  Compliance
-                </Link>
-                <Link href="/refund" className="hover:text-cyan-300">
-                  Refund
-                </Link>
-                <Link href="/cookies" className="hover:text-cyan-300">
-                  Cookies
-                </Link>
-              </div>
+            <div className="flex flex-col items-center justify-between gap-5 text-sm text-gray-400 md:flex-row">
+
+              <p>
+                © 2026 LeadsRift LLC. All Rights Reserved.
+              </p>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </footer>
   );
 }
