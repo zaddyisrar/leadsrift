@@ -48,7 +48,7 @@ export default function Industries() {
 
           <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
             Powering Growth Across{" "}
-            <span className="text-cyan-300">18+ Industries</span>
+            <span className="text-cyan-300">19+ Industries</span>
           </h2>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-gray-300">

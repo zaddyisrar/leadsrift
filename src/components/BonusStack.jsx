@@ -66,7 +66,7 @@ export default function BonusStack() {
 
             <div className="relative">
               <div className="mb-6 inline-flex rounded-full border border-red-500/20 bg-red-500/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] text-red-300">
-                LIMITED BONUS ACCESS — STRATEGY CALL ONLY
+                LIMITED BONUS ACCESS
               </div>
 
               <h2 className="max-w-3xl text-4xl font-semibold leading-tight text-white md:text-6xl">
@@ -102,7 +102,7 @@ export default function BonusStack() {
                 </p>
 
                 <div className="mt-2 text-3xl text-white/25 line-through">
-                  $1500+
+                  $500+
                 </div>
 
                 <div className="text-6xl font-bold text-cyan-300">FREE</div>

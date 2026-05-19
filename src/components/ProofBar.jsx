@@ -46,12 +46,6 @@ export default function ProofBar() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <Link
-            href="/reviews"
-            className="rounded-full border border-cyan-300/45 bg-cyan-300/10 px-7 py-3.5 text-center text-sm font-bold text-cyan-100 shadow-[0_0_28px_rgba(34,211,238,0.18)] transition duration-300 hover:border-cyan-300/80 hover:bg-cyan-300 hover:text-black hover:shadow-[0_0_35px_rgba(34,211,238,0.35)]"
-          >
-            See what our clients say's About Us?
-          </Link>
         </div>
       </div>
     </section>

@@ -205,7 +205,7 @@ export default function IndustriesPage() {
           <h1 className="mx-auto mt-6 max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">
             Powering Growth Across{" "}
             <span className="text-cyan-300">
-              18+ Industries
+              19+ Industries
             </span>
           </h1>
         </div>

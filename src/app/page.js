@@ -1,3 +1,4 @@
+import ReviewSection from "@/components/ReviewSection";
 import BonusStack from "@/components/BonusStack";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -21,6 +22,7 @@ export default function Home() {
       <BonusStack />
       <Services />
       <Industries />
+      <ReviewSection />
       <Packages />
       <FinalCTA />
 

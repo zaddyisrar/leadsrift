@@ -83,10 +83,6 @@ export default function Services() {
           <p className="mb-4 text-sm uppercase tracking-[0.4em] text-cyan-300">
             OUR CORE SERVICES
           </p>
-
-          <h2 className="text-5xl font-semibold text-white">
-            Outbound Systems Built To Generate Opportunities
-          </h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">

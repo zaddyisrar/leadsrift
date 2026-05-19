@@ -56,7 +56,7 @@ export default function Hero() {
       </div>
 
       {/* CONTENT */}
-      <div className="relative mx-auto max-w-6xl text-center">
+      <div className="relative mx-auto max-w-6xl items-start">
 
         <div className="mb-8 inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-6 py-2 text-sm font-medium text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.15)]">
           Done-For-You Outbound Growth Systems
@@ -65,7 +65,7 @@ export default function Hero() {
         <h1 className="mx-auto max-w-6xl text-5xl font-semibold leading-[0.92] tracking-tight text-white md:text-7xl lg:text-[88px]">
           We Book Qualified B2B/B2C Appointments without{" "}
           <span className="text-cyan-300 drop-shadow-[0_0_35px_rgba(34,211,238,0.4)]">
-            Hiring An In-House Sales Team
+            Hiring an In-House Sales Team
           </span>
         </h1>
 
