@@ -1,9 +1,11 @@
-import TrustStrip from "@/components/TrustStrip";
+import Reveal from "@/components/Reveal";
+
 import MiniProcess from "@/components/MiniProcess";
 import StickyBookCall from "@/components/StickyBookCall";
 import RealConversations from "@/components/RealConversations";
 import ReviewSection from "@/components/ReviewSection";
 import BonusStack from "@/components/BonusStack";
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProofBar from "@/components/ProofBar";
@@ -20,18 +22,49 @@ export default function Home() {
       <Navbar />
 
       <Hero />
-      <TrustStrip />
-      <ProofBar />
-      <Problem />
-      <Services />
+
+      <Reveal y={28}>
+        <ProofBar />
+      </Reveal>
+
+      <Reveal x={-35}>
+        <Problem />
+      </Reveal>
+
+      <Reveal x={35}>
+        <Services />
+      </Reveal>
+
+      {/* Industries baad mein special upgrade hoga */}
       <Industries />
-      <ReviewSection />
-      <RealConversations />
-      <MiniProcess />
-      <Packages />
-      <BonusStack />
+
+      <Reveal y={34}>
+        <ReviewSection />
+      </Reveal>
+
+      <Reveal x={-35}>
+        <RealConversations />
+      </Reveal>
+
+      <Reveal x={35}>
+        <MiniProcess />
+      </Reveal>
+
+      <Reveal y={34}>
+        <Packages />
+      </Reveal>
+
+      <Reveal y={34}>
+        <BonusStack />
+      </Reveal>
+
+      {/* FinalCTA baad mein special upgrade hoga */}
       <FinalCTA />
-      <Footer />
+
+      <Reveal y={24}>
+        <Footer />
+      </Reveal>
+
       <StickyBookCall />
     </main>
   );
