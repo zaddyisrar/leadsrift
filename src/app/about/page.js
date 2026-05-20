@@ -1,6 +1,9 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -139,18 +142,83 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="relative min-h-[420px]">
-              <div className="absolute inset-0 rounded-[2.5rem] border border-cyan-300/15 bg-white/[0.03] shadow-[0_0_80px_rgba(34,211,238,0.08)] backdrop-blur-xl" />
-              <div className="absolute inset-6 rounded-[2rem] border border-cyan-300/10 bg-[#050b12]/70" />
-              <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/20 bg-cyan-300/5 blur-sm" />
+            {/* RIGHT HERO VISUAL */}
+            <div className="relative hidden min-h-[500px] lg:block">
+              <div className="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/10 bg-cyan-300/[0.03] shadow-[inset_0_0_90px_rgba(34,211,238,0.08),0_0_110px_rgba(34,211,238,0.18)]" />
 
-              <div className="absolute left-1/2 top-1/2 flex h-64 w-64 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-cyan-300/20 bg-[#02060b]/70 shadow-[0_0_90px_rgba(34,211,238,0.15)]">
-                <span className="text-center text-xs uppercase tracking-[0.35em] text-cyan-200/70">
-                  3D SYMBOL
-                  <br />
-                  PLACEHOLDER
-                </span>
-              </div>
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-cyan-300/10"
+              />
+
+              <motion.div
+                animate={{
+                  y: [0, -18, 0],
+                  rotate: [0, 2, 0],
+                }}
+                transition={{
+                  duration: 5.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute left-1/2 top-1/2 flex h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+              >
+                <div className="absolute h-[520px] w-[520px] rounded-full bg-cyan-300/15 blur-[120px]" />
+                <div className="absolute h-[320px] w-[320px] rounded-full bg-cyan-300/20 blur-[70px]" />
+
+                <Image
+                  src="/leadsrift-symbol.png"
+                  alt="LeadsRift"
+                  width={255}
+                  height={255}
+                  priority
+                  className="relative z-20 brightness-125 drop-shadow-[0_0_70px_rgba(34,211,238,0.95)]"
+                />
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{
+                  duration: 4.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute left-6 top-16 rounded-3xl border border-cyan-300/20 bg-[#071019]/85 px-6 py-5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl"
+              >
+                <p className="text-3xl font-semibold text-white">30,061+</p>
+                <p className="mt-1 text-sm text-cyan-100/80">Emails Sent</p>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, 14, 0] }}
+                transition={{
+                  duration: 4.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute right-4 top-32 rounded-3xl border border-cyan-300/20 bg-[#071019]/85 px-6 py-5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl"
+              >
+                <p className="text-3xl font-semibold text-white">1,629</p>
+                <p className="mt-1 text-sm text-cyan-100/80">
+                  Replies Tracked
+                </p>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{
+                  duration: 5.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute bottom-14 left-12 rounded-3xl border border-cyan-300/20 bg-[#071019]/85 px-6 py-5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl"
+              >
+                <p className="text-3xl font-semibold text-white">200+</p>
+                <p className="mt-1 text-sm text-cyan-100/80">
+                  Accepted Opportunities
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
