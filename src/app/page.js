@@ -1,10 +1,13 @@
+import TrustStrip from "@/components/TrustStrip";
+import MiniProcess from "@/components/MiniProcess";
+import StickyBookCall from "@/components/StickyBookCall";
+import RealConversations from "@/components/RealConversations";
 import ReviewSection from "@/components/ReviewSection";
 import BonusStack from "@/components/BonusStack";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProofBar from "@/components/ProofBar";
 import Problem from "@/components/Problem";
-import Process from "@/components/Process";
 import Services from "@/components/Services";
 import Industries from "@/components/Industries";
 import Packages from "@/components/Packages";
@@ -17,16 +20,19 @@ export default function Home() {
       <Navbar />
 
       <Hero />
+      <TrustStrip />
       <ProofBar />
       <Problem />
-      <BonusStack />
       <Services />
       <Industries />
       <ReviewSection />
+      <RealConversations />
+      <MiniProcess />
       <Packages />
+      <BonusStack />
       <FinalCTA />
-
       <Footer />
+      <StickyBookCall />
     </main>
   );
 }

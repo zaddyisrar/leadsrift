@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function FinalCTA() {
   return (
     <section
@@ -31,10 +33,10 @@ export default function FinalCTA() {
         </h2>
 
         <p className="mx-auto mt-6 max-w-4xl text-lg leading-8 text-gray-300">
-          Stop depending on referrals, random leads, and inconsistent
-          outreach. LeadsRift builds the outreach system, contacts your ideal
-          prospects, qualifies interest, and books appointments directly into
-          your calendar.
+          Stop depending on referrals, random leads, and inconsistent outreach.
+          LeadsRift builds the outreach system, contacts your ideal prospects,
+          qualifies interest, and books appointments directly into your
+          calendar.
         </p>
 
         <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-gray-400">
@@ -42,13 +44,27 @@ export default function FinalCTA() {
           opportunities we can generate in your market.
         </p>
 
-        <div className="mt-10 flex items-center justify-center">
-          <a
+        <div className="mt-10 flex flex-col items-center">
+          <Link
             href="/contact"
-            className="rounded-full bg-cyan-300 px-8 py-4 text-sm font-bold text-black shadow-[0_0_40px_rgba(34,211,238,0.38)] transition duration-300 hover:bg-white hover:scale-[1.03] hover:shadow-[0_0_58px_rgba(34,211,238,0.6)]"
+            className="rounded-full bg-cyan-300 px-12 py-6 text-lg font-semibold text-black shadow-[0_0_60px_rgba(34,211,238,0.35)] transition hover:scale-[1.02]"
           >
             Book My Free Strategy Call
-          </a>
+          </Link>
+
+          <div className="mt-4 flex items-center gap-2 text-sm text-slate-400">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-xs">
+              ⏱
+            </span>
+
+            <span>
+              Takes{" "}
+              <span className="font-semibold text-cyan-300">
+                45 seconds
+              </span>{" "}
+              only
+            </span>
+          </div>
         </div>
       </div>
     </section>
