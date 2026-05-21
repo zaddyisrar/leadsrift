@@ -31,7 +31,7 @@ export async function POST(request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "LeadsRift <onboarding@resend.dev>",
+      from: "LeadsRift <info@leadsrift.com>",
 
       to: [process.env.LEADSRIFT_RECEIVER_EMAIL],
 

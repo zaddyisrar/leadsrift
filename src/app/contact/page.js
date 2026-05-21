@@ -97,7 +97,7 @@ export default function ContactPage() {
     if (!isValid) return;
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/contacts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
