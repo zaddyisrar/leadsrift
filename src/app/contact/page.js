@@ -1,3 +1,6 @@
+"use client";
+
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,7 +19,139 @@ const contactFlow = [
   "If it makes sense, we move into setup and launch.",
 ];
 
+const services = [
+  "Cold Calling",
+  "Email Outreach",
+  "LinkedIn Outreach",
+  "Lead Qualification",
+  "CRM & Follow-Up Management",
+  "Appointment Setting",
+  "Full Outbound System",
+];
+
+const initialForm = {
+  name: "",
+  email: "",
+  company: "",
+  services: [],
+  message: "",
+};
+
 export default function ContactPage() {
+  const [form, setForm] = useState(initialForm);
+  const [touched, setTouched] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+
+  const errors = useMemo(() => {
+    const nextErrors = {};
+
+    if (!form.name.trim()) {
+      nextErrors.name = "Name is required.";
+    }
+
+    if (!form.email.trim()) {
+      nextErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      nextErrors.email = "Valid email required (name@example.com).";
+    }
+
+    if (form.services.length === 0) {
+      nextErrors.services = "Please select at least one service.";
+    }
+
+    return nextErrors;
+  }, [form]);
+
+  const isValid = Object.keys(errors).length === 0;
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }
+
+  function handleBlur(e) {
+    const { name } = e.target;
+
+    setTouched((prev) => ({
+      ...prev,
+      [name]: true,
+    }));
+  }
+
+  function handleServiceToggle(service) {
+    setForm((prev) => {
+      const alreadySelected = prev.services.includes(service);
+
+      return {
+        ...prev,
+        services: alreadySelected
+          ? prev.services.filter((item) => item !== service)
+          : [...prev.services, service],
+      };
+    });
+
+    setTouched((prev) => ({
+      ...prev,
+      services: true,
+    }));
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    setTouched({
+      name: true,
+      email: true,
+      company: true,
+      services: true,
+      message: true,
+    });
+
+    if (!isValid) return;
+
+    try {
+  const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(form),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to send inquiry.");
+  }
+
+  setSubmitted(true);
+} catch (error) {
+  alert("Something went wrong. Please try again.");
+}
+  }
+
+  function fieldClass(field) {
+    const hasError = touched[field] && errors[field];
+
+    return `w-full rounded-2xl border bg-black/35 px-5 py-4 text-sm text-white outline-none transition placeholder:text-white/30 ${
+      hasError
+        ? "border-red-400/70 focus:border-red-300"
+        : "border-cyan-300/10 focus:border-cyan-300/50"
+    }`;
+  }
+
+  function ErrorMessage({ field }) {
+    if (!touched[field] || !errors[field]) return null;
+
+    return (
+      <p className="mt-2 text-xs font-medium text-red-300">
+        {errors[field]}
+      </p>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-[#05070d] text-white">
       <Navbar />
@@ -83,101 +218,171 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className="relative overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-white/[0.04] p-7 shadow-[0_0_70px_rgba(34,211,238,0.08)]">
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="relative overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-white/[0.04] p-7 shadow-[0_0_70px_rgba(34,211,238,0.08)]"
+          >
             <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl" />
 
             <div className="relative">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
-                Start here
-              </p>
+              {submitted ? (
+                <div className="flex min-h-[620px] flex-col items-center justify-center text-center">
+                  <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 text-4xl text-cyan-300 shadow-[0_0_45px_rgba(34,211,238,0.18)]">
+                    ✓
+                  </div>
 
-              <h2 className="mt-5 text-3xl font-semibold leading-tight">
-                Send your project details.
-              </h2>
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
+                    Booking Confirmed
+                  </p>
 
-              <p className="mt-4 leading-7 text-white/60">
-                Share the basics. We’ll use this to understand if outbound is
-                the right move for your business.
-              </p>
+                  <h2 className="mt-5 text-3xl font-semibold leading-tight md:text-4xl">
+                    Your details are locked in.
+                  </h2>
 
-              <div className="mt-8 grid gap-5">
-                <div>
-                  <label className="mb-2 block text-sm text-white/70">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    className="w-full rounded-2xl border border-cyan-300/10 bg-black/35 px-5 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-cyan-300/50"
-                  />
-                </div>
+                  <p className="mt-4 max-w-md leading-7 text-white/60">
+                    Check your email for details. We’ll reach out within 24
+                    hours.
+                  </p>
 
-                <div>
-                  <label className="mb-2 block text-sm text-white/70">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="you@company.com"
-                    className="w-full rounded-2xl border border-cyan-300/10 bg-black/35 px-5 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-cyan-300/50"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-sm text-white/70">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Company name"
-                    className="w-full rounded-2xl border border-cyan-300/10 bg-black/35 px-5 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-cyan-300/50"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-sm text-white/70">
-                    Service Needed
-                  </label>
-                  <select
-                    defaultValue=""
-                    className="w-full rounded-2xl border border-cyan-300/10 bg-black/35 px-5 py-4 text-sm text-white outline-none transition focus:border-cyan-300/50"
+                  <Link
+                    href="/"
+                    className="mt-8 inline-flex rounded-full bg-cyan-300 px-8 py-4 text-sm font-semibold text-black shadow-[0_0_35px_rgba(34,211,238,0.25)] transition hover:bg-white"
                   >
-                    <option value="" disabled>
-                      Select service
-                    </option>
-                    <option>Cold Calling</option>
-                    <option>Email Outreach</option>
-                    <option>LinkedIn Outreach</option>
-                    <option>Lead Qualification</option>
-                    <option>CRM & Follow-Up Management</option>
-                    <option>Appointment Setting</option>
-                    <option>Full Outbound System</option>
-                  </select>
+                    Back to Home
+                  </Link>
                 </div>
+              ) : (
+                <>
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
+                    Start here
+                  </p>
 
-                <div>
-                  <label className="mb-2 block text-sm text-white/70">
-                    Message
-                  </label>
-                  <textarea
-                    rows="6"
-                    placeholder="Tell us about your offer, audience, and growth goals..."
-                    className="w-full resize-none rounded-2xl border border-cyan-300/10 bg-black/35 px-5 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-cyan-300/50"
-                  />
-                </div>
+                  <h2 className="mt-5 text-3xl font-semibold leading-tight">
+                    Send your project details.
+                  </h2>
 
-                <button
-                  type="submit"
-                  className="rounded-full bg-cyan-300 px-8 py-4 text-sm font-semibold text-black shadow-[0_0_35px_rgba(34,211,238,0.25)] transition hover:bg-white"
-                >
-                  Send Inquiry
-                </button>
+                  <p className="mt-4 leading-7 text-white/60">
+                    Share the basics. We’ll use this to understand if outbound is
+                    the right move for your business.
+                  </p>
 
-                <p className="text-center text-xs leading-6 text-white/40">
-                  This form is visual for now. We’ll connect submission handling
-                  in the next phase.
-                </p>
-              </div>
+                  <div className="mt-8 grid gap-5">
+                    <div>
+                      <label className="mb-2 block text-sm text-white/70">
+                        Name
+                      </label>
+                      <input
+                        name="name"
+                        type="text"
+                        value={form.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="Your name"
+                        className={fieldClass("name")}
+                      />
+                      <ErrorMessage field="name" />
+                    </div>
+
+                    <div>
+                      <label className="mb-2 block text-sm text-white/70">
+                        Email
+                      </label>
+                      <input
+                        name="email"
+                        type="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="you@company.com"
+                        className={fieldClass("email")}
+                      />
+                      <ErrorMessage field="email" />
+                    </div>
+
+                    <div>
+                      <label className="mb-2 block text-sm text-white/70">
+                        Company{" "}
+                        <span className="text-white/35">(Optional)</span>
+                      </label>
+                      <input
+                        name="company"
+                        type="text"
+                        value={form.company}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="Company name"
+                        className={fieldClass("company")}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="mb-3 block text-sm text-white/70">
+                        Services Needed
+                      </label>
+
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {services.map((service) => {
+                          const selected = form.services.includes(service);
+
+                          return (
+                            <button
+                              key={service}
+                              type="button"
+                              onClick={() => handleServiceToggle(service)}
+                              className={`rounded-2xl border px-4 py-3 text-left text-sm transition ${
+                                selected
+                                  ? "border-cyan-300/60 bg-cyan-300/10 text-cyan-100"
+                                  : "border-cyan-300/10 bg-black/35 text-white/60 hover:border-cyan-300/35 hover:text-white"
+                              }`}
+                            >
+                              <span className="mr-2 text-cyan-300">
+                                {selected ? "✓" : "+"}
+                              </span>
+                              {service}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      <ErrorMessage field="services" />
+                    </div>
+
+                    <div>
+                      <label className="mb-2 block text-sm text-white/70">
+                        Message{" "}
+                        <span className="text-white/35">(Optional)</span>
+                      </label>
+                      <textarea
+                        name="message"
+                        rows="6"
+                        value={form.message}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="Tell us about your offer, audience, and growth goals..."
+                        className={`${fieldClass("message")} resize-none`}
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={!isValid}
+                      className={`rounded-full px-8 py-4 text-sm font-semibold shadow-[0_0_35px_rgba(34,211,238,0.25)] transition ${
+                        isValid
+                          ? "bg-cyan-300 text-black hover:bg-white"
+                          : "cursor-not-allowed border border-white/10 bg-white/10 text-white/35"
+                      }`}
+                    >
+                      Confirm Booking
+                    </button>
+
+                    <p className="text-center text-xs leading-6 text-white/40">
+                      This form is visual for now. We’ll connect submission
+                      handling in the next phase.
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
           </form>
         </div>
@@ -201,6 +406,7 @@ export default function ContactPage() {
           </Link>
         </div>
       </section>
+
       <Footer />
     </main>
   );
