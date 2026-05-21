@@ -33,7 +33,9 @@ const initialForm = {
   name: "",
   email: "",
   company: "",
-  services: [],
+  appointments: "",
+  budget: "",
+  industry: "",
   message: "",
 };
 
@@ -54,9 +56,16 @@ export default function ContactPage() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       nextErrors.email = "Valid email required (name@example.com).";
     }
+    if (!form.appointments) {
+      nextErrors.appointments = "Please select appointments requirement.";
+    }
 
-    if (form.services.length === 0) {
-      nextErrors.services = "Please select at least one service.";
+    if (!form.budget) {
+      nextErrors.budget = "Please select budget.";
+    }
+
+    if (!form.industry) {
+      nextErrors.industry = "Please select industry.";
     }
 
     return nextErrors;
@@ -82,24 +91,6 @@ export default function ContactPage() {
     }));
   }
 
-  function handleServiceToggle(service) {
-    setForm((prev) => {
-      const alreadySelected = prev.services.includes(service);
-
-      return {
-        ...prev,
-        services: alreadySelected
-          ? prev.services.filter((item) => item !== service)
-          : [...prev.services, service],
-      };
-    });
-
-    setTouched((prev) => ({
-      ...prev,
-      services: true,
-    }));
-  }
-
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -107,29 +98,31 @@ export default function ContactPage() {
       name: true,
       email: true,
       company: true,
-      services: true,
+      appointments: true,
+      budget: true,
+      industry: true,
       message: true,
     });
 
     if (!isValid) return;
 
     try {
-  const response = await fetch("/api/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(form),
-  });
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
 
-  if (!response.ok) {
-    throw new Error("Failed to send inquiry.");
-  }
+      if (!response.ok) {
+        throw new Error("Failed to send inquiry.");
+      }
 
-  setSubmitted(true);
-} catch (error) {
-  alert("Something went wrong. Please try again.");
-}
+      setSubmitted(true);
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
   }
 
   function fieldClass(field) {
@@ -315,37 +308,76 @@ export default function ContactPage() {
                         className={fieldClass("company")}
                       />
                     </div>
-
+                    
                     <div>
-                      <label className="mb-3 block text-sm text-white/70">
-                        Services Needed
+                      <label className="mb-2 block text-sm text-white/70">
+                        How Many Appointments or Leads Do You Need Per Month?
                       </label>
 
-                      <div className="grid gap-3 sm:grid-cols-2">
-                        {services.map((service) => {
-                          const selected = form.services.includes(service);
+                      <select
+                        name="appointments"
+                        value={form.appointments}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={fieldClass("appointments")}
+                      >
+                        <option value="">Select Option</option>
+                        <option>5–10</option>
+                        <option>10–25</option>
+                        <option>25–50</option>
+                        <option>50+</option>
+                      </select>
 
-                          return (
-                            <button
-                              key={service}
-                              type="button"
-                              onClick={() => handleServiceToggle(service)}
-                              className={`rounded-2xl border px-4 py-3 text-left text-sm transition ${
-                                selected
-                                  ? "border-cyan-300/60 bg-cyan-300/10 text-cyan-100"
-                                  : "border-cyan-300/10 bg-black/35 text-white/60 hover:border-cyan-300/35 hover:text-white"
-                              }`}
-                            >
-                              <span className="mr-2 text-cyan-300">
-                                {selected ? "✓" : "+"}
-                              </span>
-                              {service}
-                            </button>
-                          );
-                        })}
-                      </div>
+                      <ErrorMessage field="appointments" />
+                    </div>
 
-                      <ErrorMessage field="services" />
+                    <div>
+                      <label className="mb-2 block text-sm text-white/70">
+                        Monthly Marketing / Lead Gen Budget
+                      </label>
+
+                      <select
+                        name="budget"
+                        value={form.budget}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={fieldClass("budget")}
+                      >
+                        <option value="">Select Budget</option>
+                        <option>Under $500</option>
+                        <option>$500–$1,500</option>
+                        <option>$1,500–$5,000</option>
+                        <option>$5,000+</option>
+                      </select>
+
+                      <ErrorMessage field="budget" />
+                    </div>
+
+                    <div>
+                      <label className="mb-2 block text-sm text-white/70">
+                        What Industry Are You In?
+                      </label>
+
+                      <select
+                        name="industry"
+                        value={form.industry}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={fieldClass("industry")}
+                      >
+                        <option value="">Select Industry</option>
+                        <option>Commercial Cleaning</option>
+                        <option>Roofing</option>
+                        <option>Solar</option>
+                        <option>Real Estate</option>
+                        <option>Engineering</option>
+                        <option>Home Services</option>
+                        <option>SaaS</option>
+                        <option>Recruiting</option>
+                        <option>Other</option>
+                      </select>
+
+                      <ErrorMessage field="industry" />
                     </div>
 
                     <div>
