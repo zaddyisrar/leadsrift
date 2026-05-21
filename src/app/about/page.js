@@ -17,25 +17,18 @@ export default function AboutPage() {
   };
 
   const coFounder = {
-  role: "Co-Founder at LeadsRift",
-
-  name: "Tayyaba Khan",
-
-  image: "/team/Tayyaba.png",
-
-  desc:
-    "As the Co-Founder of LeadsRift, I specialize in helping businesses grow through strategic lead generation and high-quality appointment-setting solutions. I focus on business development, client relationships, and outreach systems that connect companies with qualified prospects. My mission is to build scalable, results-driven solutions that help our clients generate consistent growth and long-term success.",
-
-  points: [
-    "Business Development",
-    "Client Relations",
-    "Lead Generation",
-    "Growth Systems",
-  ],
-
-  linkedin:
-    "https://www.linkedin.com/in/tayyaba-khan-156288123",
-};
+    role: "Co-Founder at LeadsRift",
+    name: "Tayyaba Khan",
+    image: "/team/Tayyaba.png",
+    desc: "Helping businesses scale through strategic lead generation, client relationships, and outreach systems that turn prospects into qualified opportunities.",
+    points: [
+      "Business Development",
+      "Client Relations",
+      "Lead Generation",
+      "Growth Systems",
+    ],
+    linkedin: "https://www.linkedin.com/in/tayyaba-khan-156288123",
+  };
 
   const team = [
     {
@@ -68,7 +61,6 @@ export default function AboutPage() {
       image: "/team/Sameen-khan.png",
       desc: "Managing email campaigns, follow-ups, and prospect engagement.",
     },
-    
     {
       name: "Ammar Faraz",
       role: "Business Development Specialist",
@@ -198,7 +190,11 @@ export default function AboutPage() {
 
               <motion.div
                 animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute left-6 top-16 rounded-3xl border border-cyan-300/20 bg-[#071019]/85 px-6 py-5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl"
               >
                 <p className="text-3xl font-semibold text-white">30,061+</p>
@@ -207,7 +203,11 @@ export default function AboutPage() {
 
               <motion.div
                 animate={{ y: [0, 14, 0] }}
-                transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute right-4 top-32 rounded-3xl border border-cyan-300/20 bg-[#071019]/85 px-6 py-5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl"
               >
                 <p className="text-3xl font-semibold text-white">1,629</p>
@@ -216,7 +216,11 @@ export default function AboutPage() {
 
               <motion.div
                 animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute bottom-14 left-12 rounded-3xl border border-cyan-300/20 bg-[#071019]/85 px-6 py-5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl"
               >
                 <p className="text-3xl font-semibold text-white">200+</p>
@@ -234,7 +238,7 @@ export default function AboutPage() {
           <div className="absolute left-1/2 top-0 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[150px]" />
 
           <div className="relative mx-auto max-w-7xl">
-            <div className="mb-20 text-center">
+            <div className="mb-14 text-center">
               <p className="mb-4 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200">
                 OUR TEAM
               </p>
@@ -250,22 +254,32 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* FOUNDER FEATURE CARD */}
-            <FeatureCard person={founder} label="FOUNDER" imageSide="right" priority />
+            {/* FOUNDER + CO-FOUNDER ROW */}
+            <div className="mb-16 grid gap-6 lg:grid-cols-2">
+              <FeatureCard
+                person={founder}
+                label="FOUNDER"
+                imageSide="right"
+                priority
+              />
 
-            {/* CO-FOUNDER FEATURE CARD */}
-            <FeatureCard person={coFounder} label="CO-FOUNDER" imageSide="left" />
+              <FeatureCard
+                person={coFounder}
+                label="CO-FOUNDER"
+                imageSide="left"
+              />
+            </div>
 
             {/* TEAM GRID */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
               {team.map((member, index) => (
                 <div
                   key={`${member.role}-${index}`}
-                  className="group relative overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-white/[0.03] p-4 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:shadow-[0_0_55px_rgba(34,211,238,0.12)]"
+                  className="group relative overflow-hidden rounded-[1.5rem] border border-cyan-300/15 bg-white/[0.03] p-3 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:shadow-[0_0_45px_rgba(34,211,238,0.12)]"
                 >
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(34,211,238,0.12),transparent_35%)] opacity-0 transition group-hover:opacity-100" />
 
-                  <div className="relative aspect-[1/1.18] overflow-hidden rounded-[1.5rem] border border-cyan-300/10 bg-[#020811]">
+                  <div className="relative aspect-[1/1.08] overflow-hidden rounded-[1.2rem] border border-cyan-300/10 bg-[#020811]">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -276,20 +290,22 @@ export default function AboutPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#03060b] via-[#03060b]/15 to-transparent" />
                   </div>
 
-                  <div className="relative pt-6">
-                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+                  <div className="relative pt-4">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-300">
                       {member.role}
                     </p>
 
-                    <h3 className="mt-3 text-2xl font-semibold text-white">
+                    <h3 className="mt-2 text-lg font-semibold text-white">
                       {member.name}
                     </h3>
 
-                    <p className="mt-4 min-h-[84px] text-sm leading-7 text-slate-400">
+                    <p className="mt-3 min-h-[78px] text-xs leading-6 text-slate-400">
                       {member.desc}
                     </p>
 
-                    <SocialIcons small />
+                    <div className="origin-left scale-[0.82]">
+                      <SocialIcons small />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -307,7 +323,7 @@ function FeatureCard({ person, label, imageSide = "right", priority = false }) {
   const imageFirst = imageSide === "left";
 
   return (
-    <div className="relative mb-20 overflow-hidden rounded-[2.5rem] border border-cyan-300/15 bg-white/[0.03] shadow-[0_0_80px_rgba(34,211,238,0.06)] backdrop-blur-xl">
+    <div className="relative overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-white/[0.03] shadow-[0_0_70px_rgba(34,211,238,0.06)] backdrop-blur-xl">
       <div
         className={`absolute inset-0 ${
           imageFirst
@@ -324,33 +340,33 @@ function FeatureCard({ person, label, imageSide = "right", priority = false }) {
         }`}
       />
 
-      <div className="relative grid min-h-[520px] items-center gap-10 p-8 md:p-12 lg:grid-cols-2">
-        <div className={imageFirst ? "order-2 lg:order-1" : ""}>
+      <div className="relative grid min-h-[420px] items-center gap-6 p-6 md:p-8 lg:grid-cols-2">
+        <div className={imageFirst ? "order-2 lg:order-2" : ""}>
           <div
-            className={`absolute top-0 text-6xl font-black tracking-tight text-white/[0.03] md:text-8xl ${
-              imageFirst ? "right-8" : "-top-5 left-8 md:text-9xl"
+            className={`absolute top-0 text-5xl font-black tracking-tight text-white/[0.03] md:text-6xl ${
+              imageFirst ? "right-6" : "-top-3 left-6"
             }`}
           >
             {label}
           </div>
 
-          <p className="relative text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">
+          <p className="relative text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
             {person.role}
           </p>
 
-          <h3 className="relative mt-4 text-4xl font-semibold md:text-6xl">
+          <h3 className="relative mt-4 text-3xl font-semibold md:text-4xl">
             {person.name}
           </h3>
 
-          <p className="relative mt-6 max-w-xl text-base leading-8 text-slate-300 md:text-lg">
+          <p className="relative mt-4 max-w-xl text-sm leading-7 text-slate-300">
             {person.desc}
           </p>
 
-          <div className="relative mt-8 flex flex-wrap gap-3">
+          <div className="relative mt-6 flex flex-wrap gap-2">
             {person.points.map((point) => (
               <span
                 key={point}
-                className="rounded-full border border-cyan-300/15 bg-cyan-300/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-100/80"
+                className="rounded-full border border-cyan-300/15 bg-cyan-300/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-100/80"
               >
                 {point}
               </span>
@@ -361,14 +377,14 @@ function FeatureCard({ person, label, imageSide = "right", priority = false }) {
         </div>
 
         <div
-          className={`relative flex min-h-[430px] items-center justify-center ${
+          className={`relative flex min-h-[300px] items-center justify-center ${
             imageFirst ? "order-1 lg:order-1" : ""
           }`}
         >
-          <div className="absolute h-[340px] w-[340px] rounded-full border border-cyan-300/20 bg-cyan-300/5 shadow-[0_0_100px_rgba(34,211,238,0.16)]" />
-          <div className="absolute h-[260px] w-[260px] rounded-full bg-cyan-300/10 blur-[70px]" />
+          <div className="absolute h-[250px] w-[250px] rounded-full border border-cyan-300/20 bg-cyan-300/5 shadow-[0_0_80px_rgba(34,211,238,0.14)]" />
+          <div className="absolute h-[190px] w-[190px] rounded-full bg-cyan-300/10 blur-[60px]" />
 
-          <div className="relative aspect-square w-full max-w-[430px] overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-[#030811]/80">
+          <div className="relative aspect-square w-full max-w-[280px] overflow-hidden rounded-[1.6rem] border border-cyan-300/15 bg-[#030811]/80">
             <Image
               src={person.image}
               alt={person.name}
@@ -385,34 +401,30 @@ function FeatureCard({ person, label, imageSide = "right", priority = false }) {
   );
 }
 
-function SocialIcons({
-  small = false,
-  linkedin = "#",
-}) {
-  const sizeClass = small ? "h-9 w-9" : "h-11 w-11";
+function SocialIcons({ small = false, linkedin = "#" }) {
+  const sizeClass = small ? "h-9 w-9" : "h-10 w-10";
 
   return (
-    <div className="mt-7 flex gap-3">
-
+    <div className="mt-6 flex gap-3">
       <a
         href="#"
         className={`${sizeClass} flex items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]`}
       >
-        <FaFacebookF size={small ? 13 : 15} />
+        <FaFacebookF size={small ? 13 : 14} />
       </a>
 
       <a
         href="#"
         className={`${sizeClass} flex items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]`}
       >
-        <FaInstagram size={small ? 13 : 15} />
+        <FaInstagram size={small ? 13 : 14} />
       </a>
 
       <a
         href="#"
         className={`${sizeClass} flex items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]`}
       >
-        <FaXTwitter size={small ? 13 : 15} />
+        <FaXTwitter size={small ? 13 : 14} />
       </a>
 
       <a
@@ -421,9 +433,8 @@ function SocialIcons({
         rel="noreferrer"
         className={`${sizeClass} flex items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]`}
       >
-        <FaLinkedinIn size={small ? 13 : 15} />
+        <FaLinkedinIn size={small ? 13 : 14} />
       </a>
-
     </div>
   );
 }
