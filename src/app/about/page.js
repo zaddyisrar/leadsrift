@@ -21,7 +21,7 @@ export default function AboutPage() {
 
   name: "Tayyaba Khan",
 
-  image: "/team/tayyba.png",
+  image: "/team/Tayyaba-Khan.png",
 
   desc:
     "As the Co-Founder of LeadsRift, I specialize in helping businesses grow through strategic lead generation and high-quality appointment-setting solutions. I focus on business development, client relationships, and outreach systems that connect companies with qualified prospects. My mission is to build scalable, results-driven solutions that help our clients generate consistent growth and long-term success.",
