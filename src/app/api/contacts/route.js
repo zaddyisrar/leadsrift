@@ -1,25 +1,44 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const runtime = "nodejs";
 
 export async function POST(request) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error("CONTACT API ERROR: Missing RESEND_API_KEY");
+
+      return Response.json(
+        { error: "Server email API key is missing." },
+        { status: 500 }
+      );
+    }
+
+    if (!process.env.LEADSRIFT_RECEIVER_EMAIL) {
+      console.error("CONTACT API ERROR: Missing LEADSRIFT_RECEIVER_EMAIL");
+
+      return Response.json(
+        { error: "Receiver email is missing." },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     const body = await request.json();
 
     const {
-      name,
-      email,
-      company,
-      appointments,
-      budget,
-      industry,
-      message,
+      name = "",
+      email = "",
+      company = "",
+      appointments = "",
+      budget = "",
+      industry = "",
+      message = "",
     } = body;
 
-    // updated validation
     if (
-      !name ||
-      !email ||
+      !name.trim() ||
+      !email.trim() ||
       !appointments ||
       !budget ||
       !industry
@@ -31,45 +50,34 @@ export async function POST(request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "LeadsRift <info@leadsrift.com>",
-
+      from: "LeadsRift <onboarding@resend.dev>",
       to: [process.env.LEADSRIFT_RECEIVER_EMAIL],
-
       subject: `New LeadsRift Inquiry from ${name}`,
-
       replyTo: email,
-
       html: `
-        <h2>New LeadsRift Inquiry</h2>
+        <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111">
+          <h2>New LeadsRift Inquiry</h2>
 
-        <hr/>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Company:</strong> ${company || "Not provided"}</p>
+          <p><strong>Appointments Needed:</strong> ${appointments}</p>
+          <p><strong>Budget:</strong> ${budget}</p>
+          <p><strong>Industry:</strong> ${industry}</p>
 
-        <p><strong>Name:</strong> ${name}</p>
+          <hr />
 
-        <p><strong>Email:</strong> ${email}</p>
-
-        <p><strong>Company:</strong> ${
-          company || "Not provided"
-        }</p>
-
-        <p><strong>Appointments Needed:</strong>
-        ${appointments}</p>
-
-        <p><strong>Budget:</strong>
-        ${budget}</p>
-
-        <p><strong>Industry:</strong>
-        ${industry}</p>
-
-        <p><strong>Message:</strong></p>
-
-        <p>${message || "Not provided"}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message || "Not provided"}</p>
+        </div>
       `,
     });
 
     if (error) {
+      console.error("RESEND ERROR:", error);
+
       return Response.json(
-        { error },
+        { error: error.message || "Email failed to send." },
         { status: 500 }
       );
     }
@@ -78,10 +86,11 @@ export async function POST(request) {
       success: true,
       data,
     });
-
   } catch (error) {
+    console.error("CONTACT API ERROR:", error);
+
     return Response.json(
-      { error: "Something went wrong." },
+      { error: error.message || "Something went wrong." },
       { status: 500 }
     );
   }
