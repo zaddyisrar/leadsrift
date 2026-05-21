@@ -21,7 +21,7 @@ export default function AboutPage() {
 
   name: "Tayyaba Khan",
 
-  image: "/team/Tayyaba-Khan.png",
+  image: "/team/Tayyaba.png",
 
   desc:
     "As the Co-Founder of LeadsRift, I specialize in helping businesses grow through strategic lead generation and high-quality appointment-setting solutions. I focus on business development, client relationships, and outreach systems that connect companies with qualified prospects. My mission is to build scalable, results-driven solutions that help our clients generate consistent growth and long-term success.",
@@ -76,15 +76,15 @@ export default function AboutPage() {
       desc: "Researching and organizing high-fit prospects for outreach campaigns.",
     },
     {
-      name: "Team Member",
-      role: "Appointment Setter",
+      name: "Hiba Tahir",
+      role: "Lead Generation Specialist",
       image: "/team/member-07.png",
       desc: "Helping convert prospect interest into booked qualified appointments.",
     },
     {
-      name: "Team Member",
+      name: "Pascal",
       role: "CRM Specialist",
-      image: "/team/member-08.png",
+      image: "/team/Pascal.png",
       desc: "Keeping pipelines, follow-ups, and lead data organized inside CRM systems.",
     },
     {
