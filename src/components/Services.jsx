@@ -5,64 +5,81 @@ import Reveal from "@/components/Reveal";
 
 const services = [
   {
-    number: "01",
-    title: "Cold Calling Appointment Setting & Walkthroughs",
-    preview: "Connect with qualified prospects and fill your calendar.",
+    label: "APPOINTMENT SETTING",
+    preview:
+      "Professional outbound calling campaigns designed to connect with decision-makers, qualify prospects, and book high-intent sales conversations directly into your calendar.",
     points: [
-      "Targeted prospect outreach",
+      "Decision-maker outreach",
       "Lead qualification & intent verification",
-      "Objection handling & conversation management",
+      "Objection handling & follow-ups",
       "Qualified appointment booking",
+      "Walkthrough & consultation scheduling",
+      "B2B & B2C outbound campaigns",
     ],
   },
   {
-    number: "02",
-    title: "B2B Lead Generation",
-    preview: "Target decision-makers based on market fit.",
+    label: "B2B LEAD GENERATION",
+    preview:
+      "Targeted prospecting systems are built to help businesses consistently connect with qualified companies, decision-makers, and potential clients.",
     points: [
-      "Industry targeting",
-      "Decision makers",
-      "Company filtering",
-      "Lead research",
+      "ICP & market targeting",
+      "Prospect list building",
+      "Multi-channel outreach",
+      "Decision-maker engagement",
+      "Sales pipeline generation",
+      "Qualified business opportunities",
     ],
   },
   {
-    number: "03",
-    title: "B2C Lead Generation",
-    preview: "Reach homeowners and customers in local areas.",
-    points: ["Homeowner targeting", "Local markets", "Service areas", "Lead sourcing"],
-  },
-  {
-    number: "04",
-    title: "Email Marketing Outreach",
-    preview: "Generate conversations through personalized outreach.",
+    label: "B2C LEAD GENERATION",
+    preview:
+      "Outbound campaigns focused on helping local and service-based businesses generate qualified consumer leads and book appointments consistently.",
     points: [
-      "Email campaigns",
-      "Personalized messaging",
-      "Reply tracking",
-      "Follow-up sequences",
-    ],
-  },
-  {
-    number: "05",
-    title: "LinkedIn Outreach",
-    preview: "Turn LinkedIn connections into sales opportunities.",
-    points: [
-      "Connection strategy",
-      "Message sequences",
-      "Follow-ups",
-      "Conversation tracking",
-    ],
-  },
-  {
-    number: "06",
-    title: "CRM Management and Follow-Up",
-    preview: "Keep your pipeline organized and active.",
-    points: [
-      "CRM updates",
-      "Lead tracking",
+      "Local market targeting",
+      "Homeowner outreach campaigns",
+      "Service inquiry generation",
+      "Qualified consumer conversations",
       "Follow-up management",
-      "Pipeline organization",
+      "Appointment & estimate booking",
+    ],
+  },
+  {
+    label: "EMAIL OUTREACH",
+    preview:
+      "Cold email campaigns designed to start conversations, nurture prospects, and generate qualified business opportunities without spam tactics.",
+    points: [
+      "Personalized email campaigns",
+      "Prospect segmentation",
+      "Reply management & tracking",
+      "Automated follow-up sequences",
+      "Conversation nurturing",
+      "Appointment-focused outreach",
+    ],
+  },
+  {
+    label: "LINKEDIN PROSPECTING",
+    preview:
+      "Strategic LinkedIn outreach systems that help businesses connect with decision-makers, build relationships, and generate qualified conversations.",
+    points: [
+      "LinkedIn prospect targeting",
+      "Personalized connection outreach",
+      "Follow-up messaging sequences",
+      "Decision-maker engagement",
+      "Conversation management",
+      "Qualified meeting generation",
+    ],
+  },
+  {
+    label: "CRM & FOLLOW-UPS",
+    preview:
+      "Pipeline and follow-up management systems that help businesses stay organized, respond faster, and convert more opportunities into appointments.",
+    points: [
+      "CRM pipeline organization",
+      "Lead tracking & updates",
+      "Follow-up scheduling",
+      "Prospect status management",
+      "Sales activity reporting",
+      "Opportunity nurturing workflows",
     ],
   },
 ];
@@ -83,24 +100,22 @@ export default function Services() {
               OUR CORE SERVICES
             </p>
 
-            <h2 className="mx-auto max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
-              Outreach Systems Built To Generate{" "}
-              <span className="text-cyan-300">Qualified Conversations</span>
+            <h2 className="mx-auto max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
+              Outbound Systems Built To Generate{" "}
+              <span className="text-cyan-300">
+                Qualified Appointments & Sales Opportunities
+              </span>
             </h2>
           </div>
         </Reveal>
 
         <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 md:gap-6">
           {services.map((service, index) => (
-            <Reveal key={service.title} delay={index * 0.06} y={24}>
+            <Reveal key={service.label} delay={index * 0.06} y={24}>
               <div className="group flex h-full flex-col rounded-[1.5rem] border border-cyan-300/10 bg-white/[0.03] p-4 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:shadow-[0_0_40px_rgba(34,211,238,0.10)] sm:rounded-[2rem] sm:p-6 md:p-7">
-                <div className="mb-4 text-2xl font-bold text-cyan-300 drop-shadow-[0_0_16px_rgba(34,211,238,0.35)] sm:mb-6 sm:text-4xl">
-                  {service.number}
-                </div>
-
-                <h3 className="text-[13px] font-semibold leading-5 text-white sm:text-lg sm:leading-7 md:text-xl">
-                  {service.title}
-                </h3>
+                <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300 drop-shadow-[0_0_16px_rgba(34,211,238,0.35)] sm:mb-6 sm:text-xs">
+                  {service.label}
+                </p>
 
                 <p className="mt-3 text-[11px] leading-5 text-white/55 sm:mt-4 sm:text-sm sm:leading-7 md:text-base">
                   {service.preview}

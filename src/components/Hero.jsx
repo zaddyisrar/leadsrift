@@ -37,18 +37,16 @@ export default function Hero() {
 
           <Reveal delay={0.15} y={30}>
             <h1 className="mx-auto max-w-[330px] text-[32px] font-semibold leading-[0.92] tracking-[-0.06em] text-white min-[390px]:max-w-[370px] min-[390px]:text-[36px] sm:max-w-[620px] sm:text-[48px] md:text-[56px] lg:mx-0 lg:text-[60px] xl:text-[66px]">
-              We Book Qualified B2B/B2C Appointments without{" "}
+              We Build Outbound Systems{" "}
               <span className="text-cyan-300 drop-shadow-[0_0_35px_rgba(34,211,238,0.4)]">
-                Hiring an In-House Sales Team
+                That Fill Your Calendar With Qualified Appointments
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.25} y={24}>
             <p className="mx-auto mt-6 max-w-[330px] text-[13px] leading-7 text-gray-300 min-[390px]:max-w-[365px] sm:max-w-[620px] sm:text-[15px] md:text-[17px] lg:mx-0">
-              LeadsRift builds and manages done-for-you outreach systems using
-              cold calling, email marketing, and LinkedIn outreach to help B2B
-              and B2C businesses fill their calendar with qualified prospects.
+              LeadsRift helps B2B and B2C businesses generate qualified leads, booked demos, walkthroughs, and sales opportunities through cold calling, LinkedIn outreach, and email campaigns done entirely for you.
             </p>
           </Reveal>
 
@@ -130,10 +128,10 @@ export default function Hero() {
               className="absolute left-0 top-8 rounded-2xl border border-cyan-300/20 bg-[#071019]/85 px-3 py-2.5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl sm:px-5 sm:py-4 lg:top-14 lg:rounded-3xl lg:px-6 lg:py-5"
             >
               <p className="text-lg font-semibold text-white sm:text-2xl lg:text-3xl">
-                30,061+
+                2,500+
               </p>
               <p className="mt-1 text-[10px] text-cyan-100/80 sm:text-sm">
-                Emails Sent
+                Appointments Booked
               </p>
             </motion.div>
 
@@ -147,10 +145,10 @@ export default function Hero() {
               className="absolute right-0 top-24 rounded-2xl border border-cyan-300/20 bg-[#071019]/85 px-3 py-2.5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl sm:px-5 sm:py-4 lg:top-28 lg:rounded-3xl lg:px-6 lg:py-5"
             >
               <p className="text-lg font-semibold text-white sm:text-2xl lg:text-3xl">
-                1,629
+                850+
               </p>
               <p className="mt-1 text-[10px] text-cyan-100/80 sm:text-sm">
-                Replies Tracked
+                Qualified Sales Calls
               </p>
             </motion.div>
 
@@ -164,10 +162,10 @@ export default function Hero() {
               className="absolute bottom-10 left-4 rounded-2xl border border-cyan-300/20 bg-[#071019]/85 px-3 py-2.5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl sm:left-8 sm:px-5 sm:py-4 lg:bottom-28 lg:left-12 lg:rounded-3xl lg:px-6 lg:py-5"
             >
               <p className="text-lg font-semibold text-white sm:text-2xl lg:text-3xl">
-                200+
+                120+
               </p>
               <p className="mt-1 text-[10px] text-cyan-100/80 sm:text-sm">
-                Accepted Opportunities
+                Businesses Scaled
               </p>
             </motion.div>
           </div>
