@@ -70,7 +70,7 @@ export default function AboutPage() {
     {
       name: "Hiba Tahir",
       role: "Lead Generation Specialist",
-      image: "/team/member-07.png",
+      image: "/team/Hiba.jpeg",
       desc: "Helping convert prospect interest into booked qualified appointments.",
     },
     {
