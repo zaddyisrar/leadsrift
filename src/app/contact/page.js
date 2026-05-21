@@ -19,16 +19,6 @@ const contactFlow = [
   "If it makes sense, we move into setup and launch.",
 ];
 
-const services = [
-  "Cold Calling",
-  "Email Outreach",
-  "LinkedIn Outreach",
-  "Lead Qualification",
-  "CRM & Follow-Up Management",
-  "Appointment Setting",
-  "Full Outbound System",
-];
-
 const initialForm = {
   name: "",
   email: "",
