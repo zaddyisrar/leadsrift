@@ -1,6 +1,4 @@
 import Reveal from "@/components/Reveal";
-
-import MiniProcess from "@/components/MiniProcess";
 import StickyBookCall from "@/components/StickyBookCall";
 import RealConversations from "@/components/RealConversations";
 import ReviewSection from "@/components/ReviewSection";
@@ -45,11 +43,6 @@ export default function Home() {
       <Reveal x={-35}>
         <RealConversations />
       </Reveal>
-
-      <Reveal x={35}>
-        <MiniProcess />
-      </Reveal>
-
       <Reveal y={34}>
         <Packages />
       </Reveal>
