@@ -36,7 +36,7 @@ export default function FinalCTA() {
           >
             <Link
               href="/contact"
-              className="inline-flex rounded-full bg-cyan-300 px-10 py-5 text-lg font-semibold text-black transition hover:scale-[1.02] hover:bg-white"
+              className="inline-flex rounded-full bg-cyan-300 px-7 py-4 text-base font-semibold text-black transition hover:scale-[1.02] hover:bg-white sm:px-10 sm:py-5 sm:text-lg"
             >
               Book My Free Strategy Call
             </Link>

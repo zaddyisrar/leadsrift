@@ -140,7 +140,7 @@ export default function ReviewSection() {
               key={review.video}
               className="group rounded-[2rem] border border-cyan-300/10 bg-white/[0.03] p-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-300/25 hover:bg-cyan-300/[0.04] hover:shadow-[0_0_45px_rgba(34,211,238,0.10)]"
             >
-              <div className="aspect-[3/4] overflow-hidden rounded-[1.5rem] border border-cyan-300/10 bg-black">
+              <div className="mx-auto aspect-[3/4] w-full max-w-[360px] overflow-hidden rounded-[1.5rem] border border-cyan-300/10 bg-black md:max-w-none">
                 <video
                   controls
                   preload="metadata"

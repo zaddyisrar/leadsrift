@@ -106,22 +106,22 @@ export default function Packages() {
                   </div>
                 </div>
 
-                <div className="mt-6 flex items-center justify-between gap-6 text-sm font-medium text-white/60 overflow-x-auto whitespace-nowrap">
-                  <div className="flex items-center gap-2">
-                    <span className="text-cyan-300">⏱</span>
-                    <span>Takes 45 seconds to book</span>
-                  </div>
+                <div className="mt-6 flex w-full items-center gap-5 overflow-x-auto whitespace-nowrap pb-1 text-xs font-medium text-white/60 sm:text-sm md:justify-between md:overflow-visible">
+  <div className="flex shrink-0 items-center gap-2">
+    <span className="text-cyan-300">⏱</span>
+    <span>Takes 45 seconds to book</span>
+  </div>
 
-                  <div className="flex items-center gap-2">
-                    <span className="text-cyan-300">👥</span>
-                    <span>120+ businesses scaled</span>
-                  </div>
+  <div className="flex shrink-0 items-center gap-2">
+    <span className="text-cyan-300">👥</span>
+    <span>120+ businesses scaled</span>
+  </div>
 
-                  <div className="flex items-center gap-2">
-                    <span className="text-cyan-300">📅</span>
-                    <span>2,500+ appointments booked</span>
-                  </div>
-                </div>
+  <div className="flex shrink-0 items-center gap-2">
+    <span className="text-cyan-300">📅</span>
+    <span>2,500+ appointments booked</span>
+  </div>
+</div>
               </div>
             </div>
           </Reveal>
