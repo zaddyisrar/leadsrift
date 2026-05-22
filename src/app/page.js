@@ -2,8 +2,6 @@ import Reveal from "@/components/Reveal";
 import StickyBookCall from "@/components/StickyBookCall";
 import RealConversations from "@/components/RealConversations";
 import ReviewSection from "@/components/ReviewSection";
-import BonusStack from "@/components/BonusStack";
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProofBar from "@/components/ProofBar";
@@ -45,10 +43,6 @@ export default function Home() {
       </Reveal>
       <Reveal y={34}>
         <Packages />
-      </Reveal>
-
-      <Reveal y={34}>
-        <BonusStack />
       </Reveal>
 
       {/* FinalCTA baad mein special upgrade hoga */}
