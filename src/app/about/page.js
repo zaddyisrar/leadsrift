@@ -4,16 +4,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function AboutPage() {
   const founder = {
     role: "Founder & CEO",
-    name: "Syed Hamza Farooq",
+    name: "Hamza Farooq",
     image: "/team/syed-hamza.png",
-    desc: "Leading LeadsRift’s vision, outreach systems, and growth strategy with a focus on scalable client acquisition and qualified opportunities.",
+    desc: "Founder & CEO of LeadsRift focused on building scalable outbound systems that help businesses generate qualified appointments and consistent growth.",
     points: ["Leadership", "Strategy", "Growth Systems"],
+    instagram: "https://www.instagram.com/syedhamxafarooq/",
+    linkedin: "https://www.linkedin.com/in/syed-hamza-farooq/",
+    upwork: "https://www.upwork.com/freelancers/~01fb0d2404de5ff133",
   };
 
   const coFounder = {
@@ -31,99 +33,69 @@ export default function AboutPage() {
   };
 
   const team = [
-    {
-      name: "Zaddy Israr",
-      role: "Social Media Manager",
-      image: "/team/zaddy-israr.png",
-      desc: "Managing LeadsRift’s content strategy, social presence, and digital brand growth.",
-    },
-    {
-      name: "Muhammad Asim",
-      role: "Senior Closer",
-      image: "/team/muhammad-asim.png",
-      desc: "Supporting campaign execution, CRM workflows, and daily outreach operations.",
-    },
-    {
-      name: "Shahzaib abbas",
-      role: "Lead generation specialist",
-      image: "/team/Shahzaib-abbas.jpeg",
-      desc: "Handling live prospect conversations and appointment-setting workflows.",
-    },
-    {
-      name: "Labeeb Khattak",
-      role: "LinkedIn Outreach Specialist",
-      image: "/team/Labeeb-khattak.png",
-      desc: "Building professional conversations through targeted LinkedIn outreach.",
-    },
-    {
-      name: "Sameen Khan",
-      role: "Operation Manager",
-      image: "/team/Sameen-khan.png",
-      desc: "Managing email campaigns, follow-ups, and prospect engagement.",
-    },
-    {
-      name: "Ammar Faraz",
-      role: "Business Development Specialist",
-      image: "/team/Ammar-Faraz.png",
-      desc: "Researching and organizing high-fit prospects for outreach campaigns.",
-    },
-    {
-      name: "Hiba Tahir",
-      role: "Lead Generation Specialist",
-      image: "/team/Hiba.jpeg",
-      desc: "Helping convert prospect interest into booked qualified appointments.",
-    },
-    {
-      name: "Pascal",
-      role: "CRM Specialist",
-      image: "/team/Pascal.png",
-      desc: "Keeping pipelines, follow-ups, and lead data organized inside CRM systems.",
-    },
-    {
-      name: "Team Member",
-      role: "Follow-Up Specialist",
-      image: "/team/member-09.png",
-      desc: "Managing prospect follow-ups so opportunities do not slip away.",
-    },
-    {
-      name: "Team Member",
-      role: "Campaign Coordinator",
-      image: "/team/member-10.png",
-      desc: "Coordinating outreach campaigns and keeping execution aligned.",
-    },
-    {
-      name: "Team Member",
-      role: "Data Researcher",
-      image: "/team/member-11.png",
-      desc: "Finding, verifying, and organizing prospect information for campaigns.",
-    },
-    {
-      name: "Team Member",
-      role: "Client Success Support",
-      image: "/team/member-12.png",
-      desc: "Supporting client communication, reporting, and service delivery.",
-    },
-    {
-      name: "Team Member",
-      role: "Outreach Assistant",
-      image: "/team/member-13.png",
-      desc: "Assisting outreach workflows, lead updates, and campaign support tasks.",
-    },
-    {
-      name: "Team Member",
-      role: "Growth Assistant",
-      image: "/team/member-14.png",
-      desc: "Supporting growth operations, research, and campaign improvements.",
-    },
-  ];
+  {
+    name: "Zaddy Israr",
+    role: "Social Media Manager",
+    image: "/team/zaddy-israr.png",
+    desc: "Managing LeadsRift’s content strategy, social presence, and digital brand growth.",
+  },
+
+  {
+    name: "Muhammad Asim",
+    role: "Senior Closer",
+    image: "/team/muhammad-asim.png",
+    desc: "Supporting campaign execution, CRM workflows, and daily outreach operations.",
+  },
+
+  {
+    name: "Shahzaib Abbas",
+    role: "Lead Generation Specialist",
+    image: "/team/Shahzaib-abbas.jpeg",
+    desc: "Handling live prospect conversations and appointment-setting workflows.",
+  },
+
+  {
+    name: "Labeeb Khattak",
+    role: "LinkedIn Outreach Specialist",
+    image: "/team/Labeeb-khattak.png",
+    desc: "Building professional conversations through targeted LinkedIn outreach.",
+  },
+
+  {
+    name: "Sameen Khan",
+    role: "Operation Manager",
+    image: "/team/Sameen-khan.png",
+    desc: "Managing email campaigns, follow-ups, and prospect engagement.",
+  },
+
+  {
+    name: "Ammar Faraz",
+    role: "Business Development Specialist",
+    image: "/team/Ammar-Faraz.png",
+    desc: "Researching and organizing high-fit prospects for outreach campaigns.",
+  },
+
+  {
+    name: "Hiba Tahir",
+    role: "Lead Generation Specialist",
+    image: "/team/Hiba.jpeg",
+    desc: "Helping convert prospect interest into booked qualified appointments.",
+  },
+
+  {
+    name: "Pascal",
+    role: "CRM Specialist",
+    image: "/team/Pascal.png",
+    desc: "Keeping pipelines, follow-ups, and lead data organized inside CRM systems.",
+  },
+];
 
   return (
     <>
       <Navbar />
 
       <main className="min-h-screen bg-[#03060b] text-white">
-        {/* ABOUT HERO */}
-        <section className="relative overflow-hidden border-b border-cyan-500/10 px-6 pb-28 pt-40">
+        <section className="relative overflow-hidden border-b border-cyan-500/10 px-4 pb-20 pt-36 sm:px-6 md:pb-28 md:pt-40">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
           <div className="absolute left-0 top-20 h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-[130px]" />
           <div className="absolute right-0 top-10 h-[360px] w-[360px] rounded-full bg-cyan-300/10 blur-[120px]" />
@@ -149,14 +121,11 @@ export default function AboutPage() {
                 <p>
                   We partner with service-based companies that want predictable
                   growth without the time and overhead of building an in-house
-                  sales team. From cold calling and email outreach to lead
-                  generation, follow-ups, and appointment setting, we handle the
-                  outreach process so you can stay focused on closing deals.
+                  sales team.
                 </p>
               </div>
             </div>
 
-            {/* RIGHT HERO VISUAL */}
             <div className="relative hidden min-h-[500px] lg:block">
               <div className="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/10 bg-cyan-300/[0.03] shadow-[inset_0_0_90px_rgba(34,211,238,0.08),0_0_110px_rgba(34,211,238,0.18)]" />
 
@@ -187,53 +156,11 @@ export default function AboutPage() {
                   className="relative z-20 brightness-125 drop-shadow-[0_0_70px_rgba(34,211,238,0.95)]"
                 />
               </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -12, 0] }}
-                transition={{
-                  duration: 4.2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute left-6 top-16 rounded-3xl border border-cyan-300/20 bg-[#071019]/85 px-6 py-5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl"
-              >
-                <p className="text-3xl font-semibold text-white">30,061+</p>
-                <p className="mt-1 text-sm text-cyan-100/80">Emails Sent</p>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 14, 0] }}
-                transition={{
-                  duration: 4.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute right-4 top-32 rounded-3xl border border-cyan-300/20 bg-[#071019]/85 px-6 py-5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl"
-              >
-                <p className="text-3xl font-semibold text-white">1,629</p>
-                <p className="mt-1 text-sm text-cyan-100/80">Replies Tracked</p>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 5.2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute bottom-14 left-12 rounded-3xl border border-cyan-300/20 bg-[#071019]/85 px-6 py-5 shadow-[0_0_45px_rgba(34,211,238,0.16)] backdrop-blur-xl"
-              >
-                <p className="text-3xl font-semibold text-white">200+</p>
-                <p className="mt-1 text-sm text-cyan-100/80">
-                  Accepted Opportunities
-                </p>
-              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* TEAM */}
-        <section className="relative overflow-hidden px-6 py-28">
+        <section className="relative overflow-hidden px-4 py-20 sm:px-6 md:py-28">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.025)_1px,transparent_1px)] bg-[size:54px_54px]" />
           <div className="absolute left-1/2 top-0 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[150px]" />
 
@@ -247,14 +174,8 @@ export default function AboutPage() {
                 The People Behind{" "}
                 <span className="text-cyan-300">LeadsRift</span>
               </h2>
-
-              <p className="mx-auto mt-6 max-w-2xl text-slate-400">
-                A focused team building outreach systems that create real
-                conversations and qualified opportunities.
-              </p>
             </div>
 
-            {/* FOUNDER + CO-FOUNDER ROW */}
             <div className="mb-16 grid gap-6 lg:grid-cols-2">
               <FeatureCard
                 person={founder}
@@ -270,8 +191,7 @@ export default function AboutPage() {
               />
             </div>
 
-            {/* TEAM GRID */}
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
               {team.map((member, index) => (
                 <div
                   key={`${member.role}-${index}`}
@@ -302,10 +222,6 @@ export default function AboutPage() {
                     <p className="mt-3 min-h-[78px] text-xs leading-6 text-slate-400">
                       {member.desc}
                     </p>
-
-                    <div className="origin-left scale-[0.82]">
-                      <SocialIcons small />
-                    </div>
                   </div>
                 </div>
               ))}
@@ -373,7 +289,11 @@ function FeatureCard({ person, label, imageSide = "right", priority = false }) {
             ))}
           </div>
 
-          <SocialIcons linkedin={person.linkedin} />
+          <SocialIcons
+            linkedin={person.linkedin}
+            instagram={person.instagram}
+            upwork={person.upwork}
+          />
         </div>
 
         <div
@@ -401,40 +321,41 @@ function FeatureCard({ person, label, imageSide = "right", priority = false }) {
   );
 }
 
-function SocialIcons({ small = false, linkedin = "#" }) {
-  const sizeClass = small ? "h-9 w-9" : "h-10 w-10";
-
+function SocialIcons({ linkedin, instagram, upwork }) {
   return (
     <div className="mt-6 flex gap-3">
-      <a
-        href="#"
-        className={`${sizeClass} flex items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]`}
-      >
-        <FaFacebookF size={small ? 13 : 14} />
-      </a>
+      {instagram && (
+        <a
+          href={instagram}
+          target="_blank"
+          rel="noreferrer"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
+        >
+          <FaInstagram size={14} />
+        </a>
+      )}
 
-      <a
-        href="#"
-        className={`${sizeClass} flex items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]`}
-      >
-        <FaInstagram size={small ? 13 : 14} />
-      </a>
+      {upwork && (
+        <a
+          href={upwork}
+          target="_blank"
+          rel="noreferrer"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-[11px] font-bold text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
+        >
+          UP
+        </a>
+      )}
 
-      <a
-        href="#"
-        className={`${sizeClass} flex items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]`}
-      >
-        <FaXTwitter size={small ? 13 : 14} />
-      </a>
-
-      <a
-        href={linkedin}
-        target="_blank"
-        rel="noreferrer"
-        className={`${sizeClass} flex items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]`}
-      >
-        <FaLinkedinIn size={small ? 13 : 14} />
-      </a>
+      {linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noreferrer"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-300/15 bg-cyan-300/5 text-cyan-200 transition hover:bg-cyan-300/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
+        >
+          <FaLinkedinIn size={14} />
+        </a>
+      )}
     </div>
   );
 }
