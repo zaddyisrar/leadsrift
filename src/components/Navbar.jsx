@@ -10,7 +10,7 @@ const navLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
-  { label: "Packages", href: "/packages" },
+  { label: "Process", href: "/process" },
 ];
 
 export default function Navbar() {

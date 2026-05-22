@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Reveal from "@/components/Reveal";
 
 const features = [
@@ -39,6 +40,8 @@ const pricingFactors = [
 ];
 
 export default function Packages() {
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+
   return (
     <section
       id="packages"
@@ -147,10 +150,14 @@ export default function Packages() {
                 </div>
 
                 <div className="relative grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
-                  {features.map((feature) => (
+                  {features.map((feature, index) => (
                     <div
                       key={feature}
-                      className="group flex min-w-0 items-center gap-2 rounded-xl border border-cyan-300/12 bg-black/25 p-2 transition hover:border-cyan-300/35 hover:bg-cyan-300/[0.06] sm:gap-3 sm:rounded-2xl sm:p-3"
+                      className={`group min-w-0 items-center gap-2 rounded-xl border border-cyan-300/12 bg-black/25 p-2 transition hover:border-cyan-300/35 hover:bg-cyan-300/[0.06] sm:gap-3 sm:rounded-2xl sm:p-3 ${
+                        index > 3 && !showAllFeatures
+                          ? "hidden sm:flex"
+                          : "flex"
+                      }`}
                     >
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 shadow-[0_0_20px_rgba(34,211,238,0.18)] sm:h-11 sm:w-11">
                         <svg
@@ -173,6 +180,16 @@ export default function Packages() {
                       </p>
                     </div>
                   ))}
+                </div>
+
+                <div className="relative mt-4 sm:hidden">
+                  <button
+                    type="button"
+                    onClick={() => setShowAllFeatures(!showAllFeatures)}
+                    className="w-full rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300 transition hover:bg-cyan-300/20 hover:text-white"
+                  >
+                    {showAllFeatures ? "Show Less" : "See More"}
+                  </button>
                 </div>
 
                 <div className="relative mt-4 rounded-2xl border border-cyan-300/15 bg-cyan-300/[0.06] p-4 sm:mt-5">

@@ -5,13 +5,6 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const stats = [
-  "30,061+ Emails Sent",
-  "6,523 Opens Generated",
-  "1,629 Replies Tracked",
-  "200+ Accepted Opportunities",
-];
-
 const contactFlow = [
   "Tell us about your business and current pipeline.",
   "We review your offer, audience, and growth goals.",
@@ -187,17 +180,6 @@ export default function ContactPage() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {stats.map((stat) => (
-                <div
-                  key={stat}
-                  className="rounded-2xl border border-cyan-300/10 bg-white/[0.03] px-5 py-5 text-center"
-                >
-                  <p className="text-sm font-semibold text-cyan-200">{stat}</p>
-                </div>
-              ))}
             </div>
           </div>
 

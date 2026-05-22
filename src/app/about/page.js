@@ -63,7 +63,7 @@ export default function AboutPage() {
 
   {
     name: "Sameen Khan",
-    role: "Operation Manager",
+    role: "Operations Manager",
     image: "/team/Sameen-khan.png",
     desc: "Managing email campaigns, follow-ups, and prospect engagement.",
   },
@@ -83,7 +83,7 @@ export default function AboutPage() {
   },
 
   {
-    name: "Pascal",
+    name: "Pascal S. Francis",
     role: "CRM Specialist",
     image: "/team/Pascal.png",
     desc: "Keeping pipelines, follow-ups, and lead data organized inside CRM systems.",
