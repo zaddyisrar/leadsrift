@@ -50,7 +50,6 @@ export default function Packages() {
       <div className="relative mx-auto max-w-7xl">
         <Reveal>
           <div className="mb-14 text-center">
-            
             <h2 className="text-3xl font-semibold text-white md:text-6xl">
               One Offer. Fully Custom.
               <span className="text-cyan-300"> Built For Results.</span>
@@ -107,142 +106,137 @@ export default function Packages() {
                   </div>
                 </div>
 
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href="/contact"
-                    className="inline-flex justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-black transition hover:bg-white"
-                  >
-                    Book Free Strategy Call
-                  </a>
+                <div className="mt-6 flex items-center justify-between gap-6 text-sm font-medium text-white/60 overflow-x-auto whitespace-nowrap">
+                  <div className="flex items-center gap-2">
+                    <span className="text-cyan-300">⏱</span>
+                    <span>Takes 45 seconds to book</span>
+                  </div>
 
-                    </div>
-                          
+                  <div className="flex items-center gap-2">
+                    <span className="text-cyan-300">👥</span>
+                    <span>120+ businesses scaled</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <span className="text-cyan-300">📅</span>
+                    <span>2,500+ appointments booked</span>
+                  </div>
+                </div>
               </div>
             </div>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="relative overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-[#06111a]/80 p-5 shadow-[0_0_55px_rgba(34,211,238,0.12)] backdrop-blur-xl">
-              <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-300/10 blur-[80px]" />
-              <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-cyan-300/10 blur-[70px]" />
+            <div>
+              <div className="relative overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-[#06111a]/80 p-5 shadow-[0_0_55px_rgba(34,211,238,0.12)] backdrop-blur-xl">
+                <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-300/10 blur-[80px]" />
+                <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-cyan-300/10 blur-[70px]" />
 
-              <div className="relative mb-5 flex items-center justify-between">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-300">
-                  What&apos;s Included
-                </p>
+                <div className="relative mb-5 flex items-center justify-between">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-300">
+                    What&apos;s Included
+                  </p>
 
-                <div className="mx-4 h-px flex-1 bg-cyan-300/20" />
+                  <div className="mx-4 h-px flex-1 bg-cyan-300/20" />
 
-                <div className="flex gap-1">
-                  <span className="h-1 w-5 rounded-full bg-cyan-300/50" />
-                  <span className="h-1 w-5 rounded-full bg-cyan-300/30" />
-                  <span className="h-1 w-5 rounded-full bg-cyan-300/20" />
+                  <div className="flex gap-1">
+                    <span className="h-1 w-5 rounded-full bg-cyan-300/50" />
+                    <span className="h-1 w-5 rounded-full bg-cyan-300/30" />
+                    <span className="h-1 w-5 rounded-full bg-cyan-300/20" />
+                  </div>
+                </div>
+
+                <div className="relative grid gap-3 sm:grid-cols-2">
+                  {features.map((feature) => (
+                    <div
+                      key={feature}
+                      className="group flex items-center gap-3 rounded-2xl border border-cyan-300/12 bg-black/25 p-3 transition hover:border-cyan-300/35 hover:bg-cyan-300/[0.06]"
+                    >
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 shadow-[0_0_20px_rgba(34,211,238,0.18)]">
+                        <svg
+                          className="h-4 w-4 text-cyan-300"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+
+                      <p className="text-[12px] font-medium leading-5 text-gray-300">
+                        {feature}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="relative mt-5 rounded-2xl border border-cyan-300/15 bg-cyan-300/[0.06] p-4">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-300">
+                    We handle the outreach.
+                  </p>
+
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
+                    You close the deals.
+                  </p>
                 </div>
               </div>
 
-              <div className="relative grid gap-3 sm:grid-cols-2">
-                {features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="group flex items-center gap-3 rounded-2xl border border-cyan-300/12 bg-black/25 p-3 transition hover:border-cyan-300/35 hover:bg-cyan-300/[0.06]"
-                  >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 shadow-[0_0_20px_rgba(34,211,238,0.18)]">
-                      <svg
-                        className="h-4 w-4 text-cyan-300"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-
-                    <p className="text-[12px] font-medium leading-5 text-gray-300">
-                      {feature}
-                    </p>
+              <div className="mt-5 rounded-[1.5rem] border border-emerald-400/20 bg-emerald-50/90 p-5 shadow-[0_0_40px_rgba(74,222,128,0.08)]">
+                <div className="flex items-start gap-4">
+                  <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100">
+                    <svg
+                      className="h-5 w-5 text-emerald-700"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"
+                      />
+                    </svg>
                   </div>
-                ))}
+
+                  <p className="text-sm font-medium leading-7 text-emerald-900">
+                    <span className="font-bold">
+                      More qualified conversations. Less wasted outreach.
+                    </span>{" "}
+                    We build systems focused on consistency, follow-ups, and
+                    appointment opportunities — designed around your market.
+                  </p>
+                </div>
               </div>
 
-              <div className="relative mt-5 rounded-2xl border border-cyan-300/15 bg-cyan-300/[0.06] p-4">
-                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-300">
-                  We handle the outreach.
-                </p>
-
-                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
-                  You close the deals.
-                </p>
-                
+              <div className="mt-6 text-center">
+                <a
+                  href="/contact"
+                  className="inline-flex rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-black transition hover:bg-white"
+                >
+                  Book Free Strategy Call
+                </a>
               </div>
             </div>
-            <div className="mt-5 rounded-[1.5rem] border border-emerald-400/20 bg-emerald-50/90 p-5 shadow-[0_0_40px_rgba(74,222,128,0.08)]">
-
-  <div className="flex items-start gap-4">
-
-    <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100">
-      <svg
-        className="h-5 w-5 text-emerald-700"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"
-        />
-      </svg>
-    </div>
-
-    <p className="text-sm font-medium leading-7 text-emerald-900">
-      <span className="font-bold">
-        More qualified conversations. Less wasted outreach.
-      </span>{" "}
-      We build systems focused on consistency, follow-ups, and
-      appointment opportunities — designed around your market.
-    </p>
-
-  </div>
-
-</div>
-<div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-emerald-700/10 pt-5 text-sm font-medium">
-
-  <div className="flex items-center gap-2 text-cyan-700">
-    <span className="text-cyan-500">⏱</span>
-    <span>Takes 45 seconds to book</span>
-  </div>
-
-  <div className="flex items-center gap-2 text-cyan-700">
-    <span className="text-cyan-500">👥</span>
-    <span>120+ businesses scaled</span>
-  </div>
-
-  <div className="flex items-center gap-2 text-cyan-700">
-    <span className="text-cyan-500">📅</span>
-    <span>2,500+ appointments booked</span>
-  </div>
-
-</div>
           </Reveal>
         </div>
 
         <Reveal>
           <div className="mt-10 rounded-[2.5rem] border border-cyan-300/15 bg-white/[0.03] p-8 backdrop-blur-xl">
             <div>
-  <p className="text-xs uppercase tracking-[0.3em] text-cyan-300">
-    How Pricing Works
-  </p>
+              <p className="text-xs uppercase tracking-[0.3em] text-cyan-300">
+                How Pricing Works
+              </p>
 
-  <h3 className="mt-4 text-3xl font-semibold text-white">
-    Pricing depends on your market and growth goals.
-  </h3>
-</div>
+              <h3 className="mt-4 text-3xl font-semibold text-white">
+                Pricing depends on your market and growth goals.
+              </h3>
+            </div>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {pricingFactors.map((factor) => (
