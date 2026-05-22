@@ -9,21 +9,14 @@ const calls = [
     title: "Interested Prospect",
     duration: "1:49",
     outcome: "Interested",
-    audio: "/calls/Cleening-rec.mpeg",
+    audio: "/calls/Cleening-recc.mpeg",
   },
   {
-    industry: "Roofing",
-    title: "Qualified Conversation",
-    duration: "2:04",
-    outcome: "Coming Soon",
-    audio: "",
-  },
-  {
-    industry: "Solar",
-    title: "Appointment Opportunity",
-    duration: "1:48",
-    outcome: "Coming Soon",
-    audio: "",
+    industry: "Medical Billing",
+    title: "Interested Prospect",
+    duration: "3:06",
+    outcome: "Follow-Up Requested",
+    audio: "/calls/medical-billing-followup.mpeg",
   },
 ];
 
