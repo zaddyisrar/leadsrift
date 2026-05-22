@@ -128,7 +128,7 @@ export default function Packages() {
 
           <Reveal delay={0.2}>
             <div>
-              <div className="relative overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-[#06111a]/80 p-5 shadow-[0_0_55px_rgba(34,211,238,0.12)] backdrop-blur-xl">
+              <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] border border-cyan-300/20 bg-[#06111a]/80 p-5 shadow-[0_0_55px_rgba(34,211,238,0.12)] backdrop-blur-xl">
                 <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-300/10 blur-[80px]" />
                 <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-cyan-300/10 blur-[70px]" />
 
@@ -146,13 +146,13 @@ export default function Packages() {
                   </div>
                 </div>
 
-                <div className="relative grid gap-3 sm:grid-cols-2">
+                <div className="relative grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
                   {features.map((feature) => (
                     <div
                       key={feature}
-                      className="group flex items-center gap-3 rounded-2xl border border-cyan-300/12 bg-black/25 p-3 transition hover:border-cyan-300/35 hover:bg-cyan-300/[0.06]"
+                      className="group flex items-center gap-2 rounded-xl border border-cyan-300/12 bg-black/25 p-2 sm:gap-3 sm:rounded-2xl sm:p-3 transition hover:border-cyan-300/35 hover:bg-cyan-300/[0.06]"
                     >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 shadow-[0_0_20px_rgba(34,211,238,0.18)]">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-full border border-cyan-300/30 bg-cyan-300/10 shadow-[0_0_20px_rgba(34,211,238,0.18)]">
                         <svg
                           className="h-4 w-4 text-cyan-300"
                           fill="none"
@@ -168,7 +168,7 @@ export default function Packages() {
                         </svg>
                       </div>
 
-                      <p className="text-[12px] font-medium leading-5 text-gray-300">
+                      <p className="text-[10px] leading-4 text-gray-300 sm:text-[12px] sm:leading-5">
                         {feature}
                       </p>
                     </div>
