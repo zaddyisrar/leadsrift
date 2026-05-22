@@ -5,6 +5,13 @@ import Reveal from "@/components/Reveal";
 
 const calls = [
   {
+  industry: "Healthcare Cleaning",
+  title: "Estimate Meeting Booked",
+  duration: "5:12",
+  outcome: "Meeting Booked",
+  audio: "/calls/healthcare-estimate-booked.mpeg",
+},
+  {
     industry: "Commercial Cleaning",
     title: "Interested Prospect",
     duration: "1:49",
