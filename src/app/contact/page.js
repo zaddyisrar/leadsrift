@@ -39,6 +39,7 @@ export default function ContactPage() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       nextErrors.email = "Valid email required (name@example.com).";
     }
+
     if (!form.appointments) {
       nextErrors.appointments = "Please select appointments requirement.";
     }
@@ -74,7 +75,7 @@ export default function ContactPage() {
     }));
   }
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
 
     setTouched({
@@ -89,23 +90,7 @@ export default function ContactPage() {
 
     if (!isValid) return;
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to send inquiry.");
-      }
-
-      setSubmitted(true);
-    } catch (error) {
-      alert("Something went wrong. Please try again.");
-    }
+    setSubmitted(true);
   }
 
   function fieldClass(field) {
@@ -198,7 +183,7 @@ export default function ContactPage() {
                   </div>
 
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
-                    Booking Confirmed
+                    Details Received
                   </p>
 
                   <h2 className="mt-5 text-3xl font-semibold leading-tight md:text-4xl">
@@ -206,16 +191,18 @@ export default function ContactPage() {
                   </h2>
 
                   <p className="mt-4 max-w-md leading-7 text-white/60">
-                    Check your email for details. We’ll reach out within 24
-                    hours.
+                    Great. Now choose a time that works for you and schedule
+                    your free strategy call with LeadsRift.
                   </p>
 
-                  <Link
-                    href="/"
+                  <a
+                    href="https://calendly.com/leadsrift-info/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-8 inline-flex rounded-full bg-cyan-300 px-8 py-4 text-sm font-semibold text-black shadow-[0_0_35px_rgba(34,211,238,0.25)] transition hover:bg-white"
                   >
-                    Back to Home
-                  </Link>
+                    Schedule Your Strategy Call
+                  </a>
                 </div>
               ) : (
                 <>
@@ -280,7 +267,7 @@ export default function ContactPage() {
                         className={fieldClass("company")}
                       />
                     </div>
-                    
+
                     <div>
                       <label className="mb-2 block text-sm text-white/70">
                         How Many Appointments or Leads Do You Need Per Month?
@@ -377,12 +364,12 @@ export default function ContactPage() {
                           : "cursor-not-allowed border border-white/10 bg-white/10 text-white/35"
                       }`}
                     >
-                      Confirm Booking
+                      Continue to Booking
                     </button>
 
                     <p className="text-center text-xs leading-6 text-white/40">
-                      This form is visual for now. We’ll connect submission
-                      handling in the next phase.
+                      After submitting your details, you’ll be able to schedule
+                      your strategy call.
                     </p>
                   </div>
                 </>

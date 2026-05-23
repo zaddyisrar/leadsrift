@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Reveal({
@@ -11,6 +12,23 @@ export default function Reveal({
   className = "",
   once = true,
 }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    function checkScreen() {
+      setIsMobile(window.innerWidth < 768);
+    }
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  if (isMobile) {
+    return <div className={`${width} ${className}`}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial={{
