@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "LeadsRift | Done-For-You Outbound Growth Systems",
+  title: "LeadsRift | B2B Growth Systems",
   description:
-    "LeadsRift helps businesses generate qualified appointments through cold calling, email outreach, LinkedIn prospecting, lead qualification, follow-ups, CRM management, and outbound growth systems.",
+    "Done-for-you outbound growth systems for B2B companies. Cold calling, email outreach, LinkedIn outreach, lead qualification and appointment setting.",
   keywords: [
     "Lead Generation",
     "Appointment Setting",
@@ -28,10 +28,8 @@ export const metadata = {
     "LeadsRift",
   ],
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
+  icon: "/favicon.png",
+},
   openGraph: {
     title: "LeadsRift | Done-For-You Outbound Growth Systems",
     description:
