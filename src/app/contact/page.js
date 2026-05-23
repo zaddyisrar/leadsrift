@@ -40,6 +40,10 @@ export default function ContactPage() {
       nextErrors.email = "Valid email required (name@example.com).";
     }
 
+    if (!form.company.trim()) {
+      nextErrors.company = "Company name is required.";
+    }
+
     if (!form.appointments) {
       nextErrors.appointments = "Please select appointments requirement.";
     }
@@ -254,8 +258,7 @@ export default function ContactPage() {
 
                     <div>
                       <label className="mb-2 block text-sm text-white/70">
-                        Company{" "}
-                        <span className="text-white/35">(Optional)</span>
+                        Company
                       </label>
                       <input
                         name="company"
@@ -266,6 +269,7 @@ export default function ContactPage() {
                         placeholder="Company name"
                         className={fieldClass("company")}
                       />
+                      <ErrorMessage field="company" />
                     </div>
 
                     <div>
