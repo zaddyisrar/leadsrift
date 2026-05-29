@@ -17,13 +17,16 @@ export async function POST(request) {
         "Content-Type": "text/plain;charset=utf-8",
       },
       body: JSON.stringify(body),
+      redirect: "follow",
     });
 
-    const result = await response.json();
+    const text = await response.text();
 
-    if (!response.ok || !result.success) {
+    if (!response.ok) {
+      console.error("GOOGLE SHEET ERROR:", text);
+
       return Response.json(
-        { success: false, error: "Failed to save lead." },
+        { success: false, error: "Failed to save lead to Google Sheet." },
         { status: 500 }
       );
     }
@@ -33,8 +36,10 @@ export async function POST(request) {
       message: "Lead saved successfully.",
     });
   } catch (error) {
+    console.error("CONTACT API ERROR:", error);
+
     return Response.json(
-      { success: false, error: "Something went wrong." },
+      { success: false, error: error.message || "Something went wrong." },
       { status: 500 }
     );
   }
