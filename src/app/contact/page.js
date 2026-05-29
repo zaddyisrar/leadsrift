@@ -26,13 +26,13 @@ export default function ContactPage() {
   const [form, setForm] = useState(initialForm);
   const [touched, setTouched] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const errors = useMemo(() => {
     const nextErrors = {};
 
-    if (!form.name.trim()) {
-      nextErrors.name = "Name is required.";
-    }
+    if (!form.name.trim()) nextErrors.name = "Name is required.";
 
     if (!form.email.trim()) {
       nextErrors.email = "Email is required.";
@@ -63,6 +63,7 @@ export default function ContactPage() {
 
   function handleChange(e) {
     const { name, value } = e.target;
+    setSubmitError("");
 
     setForm((prev) => ({
       ...prev,
@@ -79,7 +80,7 @@ export default function ContactPage() {
     }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     setTouched({
@@ -92,9 +93,35 @@ export default function ContactPage() {
       message: true,
     });
 
-    if (!isValid) return;
+    if (!isValid || isSubmitting) return;
 
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Failed to submit form.");
+      }
+
+      setSubmitted(true);
+      setForm(initialForm);
+    } catch (error) {
+      setSubmitError(
+        "Something went wrong while saving your details. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   function fieldClass(field) {
@@ -122,9 +149,10 @@ export default function ContactPage() {
       <Navbar />
 
       <section className="relative overflow-hidden px-6 pt-44 pb-24 md:pt-48">
-<div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(rgba(0,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.035)_1px,transparent_1px)] bg-[size:70px_70px] md:block" />        <div className="pointer-events-none absolute left-1/2 top-24 h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px]" />
-        <div className="pointer-events-none absolute left-[-140px] top-56 h-80 w-80 rounded-full border border-cyan-300/10" />
-        <div className="pointer-events-none absolute right-[-140px] bottom-10 h-80 w-80 rounded-full border border-cyan-300/10" />
+        <div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(rgba(0,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.035)_1px,transparent_1px)] bg-[size:70px_70px] md:block" />
+        <div className="pointer-events-none absolute left-1/2 top-24 hidden h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px] md:block" />
+        <div className="pointer-events-none absolute left-[-140px] top-56 hidden h-80 w-80 rounded-full border border-cyan-300/10 md:block" />
+        <div className="pointer-events-none absolute right-[-140px] bottom-10 hidden h-80 w-80 rounded-full border border-cyan-300/10 md:block" />
 
         <div className="relative mx-auto max-w-6xl text-center">
           <p className="mb-10 text-sm font-semibold uppercase tracking-[0.5em] text-cyan-300">
@@ -176,7 +204,7 @@ export default function ContactPage() {
             noValidate
             className="relative overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-white/[0.04] p-7 shadow-[0_0_70px_rgba(34,211,238,0.08)]"
           >
-            <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl" />
+            <div className="pointer-events-none absolute -right-20 -top-20 hidden h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl md:block" />
 
             <div className="relative">
               {submitted ? (
@@ -358,16 +386,22 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {submitError && (
+                      <p className="rounded-2xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-center text-xs font-medium text-red-200">
+                        {submitError}
+                      </p>
+                    )}
+
                     <button
                       type="submit"
-                      disabled={!isValid}
+                      disabled={!isValid || isSubmitting}
                       className={`rounded-full px-8 py-4 text-sm font-semibold shadow-[0_0_35px_rgba(34,211,238,0.25)] transition ${
-                        isValid
+                        isValid && !isSubmitting
                           ? "bg-cyan-300 text-black hover:bg-white"
                           : "cursor-not-allowed border border-white/10 bg-white/10 text-white/35"
                       }`}
                     >
-                      Continue to Booking
+                      {isSubmitting ? "Saving Details..." : "Continue to Booking"}
                     </button>
 
                     <p className="text-center text-xs leading-6 text-white/40">

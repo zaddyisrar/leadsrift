@@ -1,85 +1,40 @@
-import { Resend } from "resend";
-
-export const runtime = "nodejs";
-
 export async function POST(request) {
   try {
-    if (!process.env.RESEND_API_KEY) {
-      return Response.json(
-        { error: "Missing RESEND_API_KEY" },
-        { status: 500 }
-      );
-    }
-
-    if (!process.env.LEADSRIFT_RECEIVER_EMAIL) {
-      return Response.json(
-        { error: "Missing LEADSRIFT_RECEIVER_EMAIL" },
-        { status: 500 }
-      );
-    }
-
-    const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await request.json();
 
-    const {
-      name = "",
-      email = "",
-      company = "",
-      appointments = "",
-      budget = "",
-      industry = "",
-      message = "",
-    } = body;
+    const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
 
-    if (!name || !email || !appointments || !budget || !industry) {
+    if (!webhookUrl) {
       return Response.json(
-        { error: "Missing required fields." },
-        { status: 400 }
+        { success: false, error: "Google Sheet webhook URL is missing." },
+        { status: 500 }
       );
     }
 
-    const { data, error } = await resend.emails.send({
-      from: "LeadsRift <onboarding@resend.dev>",
-      to: [process.env.LEADSRIFT_RECEIVER_EMAIL],
-      subject: `New LeadsRift Inquiry - ${name}`,
-      replyTo: email,
-      html: `
-        <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111">
-          <h2>New LeadsRift Lead</h2>
-
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Company:</strong> ${company || "Not provided"}</p>
-          <p><strong>Appointments Needed:</strong> ${appointments}</p>
-          <p><strong>Budget:</strong> ${budget}</p>
-          <p><strong>Industry:</strong> ${industry}</p>
-
-          <hr />
-
-          <p><strong>Message:</strong></p>
-          <p>${message || "Not provided"}</p>
-        </div>
-      `,
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(body),
     });
 
-    if (error) {
-      console.error("RESEND ERROR:", error);
+    const result = await response.json();
 
+    if (!response.ok || !result.success) {
       return Response.json(
-        { error: error.message || "Email failed to send." },
+        { success: false, error: "Failed to save lead." },
         { status: 500 }
       );
     }
 
     return Response.json({
       success: true,
-      data,
+      message: "Lead saved successfully.",
     });
   } catch (error) {
-    console.error("CONTACT API ERROR:", error);
-
     return Response.json(
-      { error: error.message || "Something went wrong." },
+      { success: false, error: "Something went wrong." },
       { status: 500 }
     );
   }
