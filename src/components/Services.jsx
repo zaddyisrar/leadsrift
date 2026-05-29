@@ -89,8 +89,7 @@ export default function Services() {
 
   return (
     <section className="relative overflow-hidden border-b border-cyan-500/10 bg-[#03060b] px-4 py-20 sm:px-6 md:py-24">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.035)_1px,transparent_1px)] bg-[size:56px_56px] md:bg-[size:80px_80px]" />
-
+<div className="absolute inset-0 hidden bg-[linear-gradient(rgba(34,211,238,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.035)_1px,transparent_1px)] bg-[size:56px_56px] md:block md:bg-[size:80px_80px]" />
       <div className="absolute left-1/2 top-20 h-[360px] w-[360px] -translate-x-1/2 rounded-full bg-cyan-300/8 blur-[130px]" />
 
       <div className="relative mx-auto max-w-7xl">

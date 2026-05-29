@@ -31,8 +31,7 @@ export default function Pipeline() {
     >
       <div className="pointer-events-none absolute right-0 top-20 h-80 w-80 rounded-full bg-cyan-400/10 blur-[130px]" />
       <div className="pointer-events-none absolute left-0 bottom-0 h-72 w-72 rounded-full bg-cyan-400/8 blur-[130px]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.03)_1px,transparent_1px)] bg-[size:72px_72px]" />
-
+<div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(rgba(34,211,238,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.03)_1px,transparent_1px)] bg-[size:72px_72px] md:block" />
       <div className="relative mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-cyan-300">

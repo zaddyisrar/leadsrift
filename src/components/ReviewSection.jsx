@@ -110,8 +110,7 @@ export default function ReviewSection() {
       id="reviews"
       className="relative overflow-hidden border-b border-cyan-500/10 bg-[#03060b] px-4 py-16 sm:px-6 md:py-24"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.035)_1px,transparent_1px)] bg-[size:80px_80px]" />
-
+<div className="absolute inset-0 hidden bg-[linear-gradient(rgba(34,211,238,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.035)_1px,transparent_1px)] bg-[size:80px_80px] md:block" />
       <div className="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-[150px]" />
 
       <div className="relative mx-auto max-w-7xl">

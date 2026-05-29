@@ -122,8 +122,7 @@ export default function ContactPage() {
       <Navbar />
 
       <section className="relative overflow-hidden px-6 pt-44 pb-24 md:pt-48">
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.035)_1px,transparent_1px)] bg-[size:70px_70px]" />
-        <div className="pointer-events-none absolute left-1/2 top-24 h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px]" />
+<div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(rgba(0,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.035)_1px,transparent_1px)] bg-[size:70px_70px] md:block" />        <div className="pointer-events-none absolute left-1/2 top-24 h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px]" />
         <div className="pointer-events-none absolute left-[-140px] top-56 h-80 w-80 rounded-full border border-cyan-300/10" />
         <div className="pointer-events-none absolute right-[-140px] bottom-10 h-80 w-80 rounded-full border border-cyan-300/10" />
 

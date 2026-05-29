@@ -24,8 +24,7 @@ export default function Hero() {
       <div className="absolute left-[10%] top-20 h-80 w-80 rounded-full bg-cyan-400/15 blur-[130px]" />
       <div className="absolute right-0 top-28 h-[520px] w-[520px] rounded-full bg-cyan-300/10 blur-[160px]" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.04)_1px,transparent_1px)] bg-[size:48px_48px] md:bg-[size:64px_64px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(3,6,11,0.55)_45%,rgba(3,6,11,0.98)_100%)]" />
+<div className="absolute inset-0 hidden bg-[linear-gradient(rgba(34,211,238,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.04)_1px,transparent_1px)] bg-[size:48px_48px] md:block md:bg-[size:64px_64px]" />      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(3,6,11,0.55)_45%,rgba(3,6,11,0.98)_100%)]" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="min-w-0 text-center lg:text-left">

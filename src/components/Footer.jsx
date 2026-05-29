@@ -43,8 +43,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-[#03060b] px-4 pb-6 pt-12 sm:px-6 md:pb-8 md:pt-20">
       <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-300/10 blur-[110px] md:h-96 md:w-96 md:blur-[140px]" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.025)_1px,transparent_1px)] bg-[size:56px_56px] md:bg-[size:80px_80px]" />
-
+<div className="absolute inset-0 hidden bg-[linear-gradient(rgba(34,211,238,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.025)_1px,transparent_1px)] bg-[size:56px_56px] md:block md:bg-[size:80px_80px]" />
       <div className="relative mx-auto max-w-7xl">
         <div className="mx-auto mb-7 h-px max-w-6xl bg-gradient-to-r from-transparent via-cyan-300 to-transparent shadow-[0_0_30px_rgba(34,211,238,0.8)] md:mb-10" />
 

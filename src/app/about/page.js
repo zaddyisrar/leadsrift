@@ -9,7 +9,7 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 export default function AboutPage() {
   const founder = {
     role: "Founder & CEO",
-    name: "Hamza Farooq",
+    name: "Syed Hamza Farooq",
     image: "/team/syed-hamza.png",
     desc: "Founder & CEO of LeadsRift focused on building scalable outbound systems that help businesses generate qualified appointments and consistent growth.",
     points: ["Leadership", "Strategy", "Growth Systems"],
@@ -33,62 +33,73 @@ export default function AboutPage() {
   };
 
   const team = [
-  {
-    name: "Zaddy Israr",
-    role: "Social Media Manager",
-    image: "/team/zaddy-israr.png",
-    desc: "Managing LeadsRift’s content strategy, social presence, and digital brand growth.",
-  },
-
-  {
-    name: "Muhammad Asim",
-    role: "Senior Closer",
-    image: "/team/muhammad-asim.png",
-    desc: "Supporting campaign execution, CRM workflows, and daily outreach operations.",
-  },
-
-  {
-    name: "Shahzaib Abbas",
-    role: "Lead Generation Specialist",
-    image: "/team/Shahzaib-abbas.jpeg",
-    desc: "Handling live prospect conversations and appointment-setting workflows.",
-  },
-
-  {
-    name: "Labeeb Khattak",
-    role: "LinkedIn Outreach Specialist",
-    image: "/team/Labeeb-khattak.png",
-    desc: "Building professional conversations through targeted LinkedIn outreach.",
-  },
-
-  {
-    name: "Sameen Khan",
-    role: "Operations Manager",
-    image: "/team/Sameen-khan.png",
-    desc: "Managing email campaigns, follow-ups, and prospect engagement.",
-  },
-
-  {
-    name: "Ammar Faraz",
-    role: "Business Development Specialist",
-    image: "/team/Ammar-Faraz.png",
-    desc: "Researching and organizing high-fit prospects for outreach campaigns.",
-  },
-
-  {
-    name: "Hiba Tahir",
-    role: "Lead Generation Specialist",
-    image: "/team/Hiba.jpeg",
-    desc: "Helping convert prospect interest into booked qualified appointments.",
-  },
-
-  {
-    name: "Pascal S. Francis",
-    role: "CRM Specialist",
-    image: "/team/Pascal.png",
-    desc: "Keeping pipelines, follow-ups, and lead data organized inside CRM systems.",
-  },
-];
+    {
+      name: "Zaddy Israr",
+      role: "Social Media Manager",
+      image: "/team/zaddy-israr.png",
+      desc: "Managing LeadsRift’s content strategy, social presence, and digital brand growth.",
+    },
+    {
+      name: "Muhammad Asim",
+      role: "Senior Closer",
+      image: "/team/muhammad-asim.png",
+      desc: "Supporting campaign execution, CRM workflows, and daily outreach operations.",
+    },
+    {
+      name: "Shahzaib Abbas",
+      role: "Lead Generation Specialist",
+      image: "/team/Shahzaib-abbas.jpeg",
+      desc: "Handling live prospect conversations and appointment-setting workflows.",
+    },
+    {
+      name: "Labeeb Khattak",
+      role: "LinkedIn Outreach Specialist",
+      image: "/team/Labeeb-khattak.png",
+      desc: "Building professional conversations through targeted LinkedIn outreach.",
+    },
+    {
+      name: "Sameen Khan",
+      role: "Operations Manager",
+      image: "/team/Sameen-khan.png",
+      desc: "Managing email campaigns, follow-ups, and prospect engagement.",
+    },
+    {
+      name: "Ammar Faraz",
+      role: "Business Development Specialist",
+      image: "/team/Ammar-Faraz.png",
+      desc: "Researching and organizing high-fit prospects for outreach campaigns.",
+    },
+    {
+      name: "Hiba Tahir",
+      role: "Lead Generation Specialist",
+      image: "/team/Hiba.jpeg",
+      desc: "Helping convert prospect interest into booked qualified appointments.",
+    },
+    {
+      name: "Pascal S. Francis",
+      role: "CRM Specialist",
+      image: "/team/Pascal.png",
+      desc: "Keeping pipelines, follow-ups, and lead data organized inside CRM systems.",
+    },
+    {
+      name: "Emily Carter",
+      role: "US Appointment Setter",
+      image: "/team/emily-carter.png",
+      desc: "Managing outbound conversations and appointment scheduling for North American prospects.",
+    },
+    {
+      name: "Daniel Brooks",
+      role: "UK Outreach Specialist",
+      image: "/team/daniel-brooks.png",
+      desc: "Building qualified opportunities through targeted outreach and prospect engagement.",
+    },
+    {
+      name: "Sophia Martinez",
+      role: "Client Success Coordinator",
+      image: "/team/sophia-martinez.png",
+      desc: "Supporting client communication, onboarding, and campaign coordination.",
+    },
+  ];
 
   return (
     <>
@@ -96,9 +107,9 @@ export default function AboutPage() {
 
       <main className="min-h-screen bg-[#03060b] text-white">
         <section className="relative overflow-hidden border-b border-cyan-500/10 px-4 pb-20 pt-36 sm:px-6 md:pb-28 md:pt-40">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
-          <div className="absolute left-0 top-20 h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-[130px]" />
-          <div className="absolute right-0 top-10 h-[360px] w-[360px] rounded-full bg-cyan-300/10 blur-[120px]" />
+<div className="absolute inset-0 hidden bg-[linear-gradient(rgba(34,211,238,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.04)_1px,transparent_1px)] bg-[size:48px_48px] md:block" />
+          <div className="absolute left-0 top-20 hidden h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-[130px] lg:block" />
+          <div className="absolute right-0 top-10 hidden h-[360px] w-[360px] rounded-full bg-cyan-300/10 blur-[120px] lg:block" />
 
           <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
             <div>
@@ -107,8 +118,11 @@ export default function AboutPage() {
               </p>
 
               <h1 className="max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
-                Remote Outreach Built To Turn Cold Prospects Into{" "}
-                <span className="text-cyan-300">Qualified Opportunities</span>
+                Built To Help Businesses Generate More{" "}
+                <span className="text-cyan-300">
+                  Qualified Appointments
+                </span>{" "}
+                And Predictable Growth
               </h1>
 
               <div className="mt-8 max-w-2xl space-y-5 text-base leading-8 text-slate-300 md:text-lg">
@@ -161,8 +175,7 @@ export default function AboutPage() {
         </section>
 
         <section className="relative overflow-hidden px-4 py-20 sm:px-6 md:py-28">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.025)_1px,transparent_1px)] bg-[size:54px_54px]" />
-          <div className="absolute left-1/2 top-0 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[150px]" />
+<div className="absolute inset-0 hidden bg-[linear-gradient(rgba(34,211,238,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.025)_1px,transparent_1px)] bg-[size:54px_54px] md:block" />          <div className="absolute left-1/2 top-0 hidden h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[150px] lg:block" />
 
           <div className="relative mx-auto max-w-7xl">
             <div className="mb-14 text-center">
@@ -171,7 +184,7 @@ export default function AboutPage() {
               </p>
 
               <h2 className="text-4xl font-semibold md:text-6xl">
-                The People Behind{" "}
+                Meet The Team Powering{" "}
                 <span className="text-cyan-300">LeadsRift</span>
               </h2>
             </div>
@@ -219,7 +232,7 @@ export default function AboutPage() {
                       {member.name}
                     </h3>
 
-                    <p className="mt-3 min-h-[78px] text-xs leading-6 text-slate-400">
+                    <p className="mt-3 min-h-[90px] text-xs leading-6 text-slate-400">
                       {member.desc}
                     </p>
                   </div>

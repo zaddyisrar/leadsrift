@@ -11,8 +11,7 @@ export default function FinalCTA() {
       className="relative overflow-hidden border-b border-cyan-500/10 bg-[#03060b] px-6 py-20"
     >
       {/* grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.035)_1px,transparent_1px)] bg-[size:72px_72px]" />
-
+<div className="absolute inset-0 hidden bg-[linear-gradient(rgba(34,211,238,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.035)_1px,transparent_1px)] bg-[size:72px_72px] md:block" />
       {/* glow */}
       <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-[120px]" />
 
