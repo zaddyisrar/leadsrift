@@ -19,84 +19,84 @@ const reviews = [
   },
 
   {
-    type: "text",
-    company: "Seagull Cleaning Services",
-    text: "Honestly the follow up part helped us the most. We had leads before too, but things were not really organized. LeadsRift made the process easier to keep up with.",
-    name: "Kazeem Salami",
-    rating: 5,
-  },
+  type: "text",
+  company: "White Rabbit Creative INC",
+  text: "Honestly the follow up part helped us the most. We had leads before too, but things were not really organized. LeadsRift made the process easier to keep up with.",
+  name: "Kirandeep",
+  rating: 5,
+},
 
-  {
-    type: "text",
-    company: "Capital Facilities",
-    text: "The outreach felt more structured than what we were doing before. It helped us stay on top of conversations and not lose track of people.",
-    name: "Tom Fuge",
-    rating: 5,
-  },
+{
+  type: "text",
+  company: "Capital Facilities",
+  text: "The outreach felt more structured than what we were doing before. It helped us stay on top of conversations and not lose track of people.",
+  name: "Harmanpreet Singh",
+  rating: 5,
+},
 
-  {
-    type: "text",
-    company: "Local Splash",
-    text: "Good experience overall. The main thing was consistency. We were able to keep the conversations moving instead of starting from zero every time.",
-    name: "Andrew Franklin",
-    rating: 5,
-  },
+{
+  type: "text",
+  company: "Maid-In-Canada.com",
+  text: "Good experience overall. The main thing was consistency. We were able to keep the conversations moving instead of starting from zero every time.",
+  name: "Bill",
+  rating: 5,
+},
 
-  {
-    type: "text",
-    company: "Family First Life",
-    text: "They helped make the outreach side simpler for us. It was easier to see who was interested and who needed follow up.",
-    name: "Braven Ramirez",
-    rating: 5,
-  },
+{
+  type: "text",
+  company: "Watkins Family Holdings Company",
+  text: "They helped make the outreach side simpler for us. It was easier to see who was interested and who needed follow up.",
+  name: "Cedric Watkins",
+  rating: 5,
+},
 
-  {
-    type: "text",
-    company: "Hero Cleaning",
-    text: "Before this, our outreach was kind of all over the place. LeadsRift helped us put a proper process around it and that made a real difference.",
-    name: "Anthony Pasquale",
-    rating: 5,
-  },
+{
+  type: "text",
+  company: "Steamate",
+  text: "Before this, our outreach was kind of all over the place. LeadsRift helped us put a proper process around it and that made a real difference.",
+  name: "Jessica Bruno",
+  rating: 5,
+},
 
-  {
-    type: "text",
-    company: "Smoky Mountain Commercial Cleaning",
-    text: "We liked that everything was tracked better. It was not just random calls or messages, there was an actual flow behind it.",
-    name: "Derek Hicks",
-    rating: 5,
-  },
+{
+  type: "text",
+  company: "Stratus Building Solutions of Detroit",
+  text: "We liked that everything was tracked better. It was not just random calls or messages, there was an actual flow behind it.",
+  name: "Kaylee Hiatt",
+  rating: 5,
+},
 
-  {
-    type: "text",
-    company: "Boston Cleaning Co., Inc.",
-    text: "The system helped us stay more consistent with prospects. Follow ups were handled better and the pipeline was easier to understand.",
-    name: "Anthony Pasquale",
-    rating: 5,
-  },
+{
+  type: "text",
+  company: "Freshly Cleaning",
+  text: "The system helped us stay more consistent with prospects. Follow ups were handled better and the pipeline was easier to understand.",
+  name: "Shahzad Ahmed",
+  rating: 5,
+},
 
-  {
-    type: "text",
-    company: "B.A.M Cleaning Company",
-    text: "It gave us a cleaner way to manage appointment opportunities. Nothing too complicated, just a better process than what we had before.",
-    name: "Bia Szucs",
-    rating: 5,
-  },
+{
+  type: "text",
+  company: "Crystal Purity",
+  text: "It gave us a cleaner way to manage appointment opportunities. Nothing too complicated, just a better process than what we had before.",
+  name: "Tay Taimour",
+  rating: 5,
+},
 
-  {
-    type: "text",
-    company: "Physical Therapist in Lubbock, Texas",
-    text: "The follow up process was useful. It helped keep conversations organized and made it easier to see which opportunities were worth moving forward with.",
-    name: "DR. Tuamokumo Timi S MD",
-    rating: 5,
-  },
+{
+  type: "text",
+  company: "Zemtash Carpet Cleaning and Zemtash Commercial Cleaning",
+  text: "The follow up process was useful. It helped keep conversations organized and made it easier to see which opportunities were worth moving forward with.",
+  name: "Marcus Gomes",
+  rating: 5,
+},
 
-  {
-    type: "text",
-    company: "Dust Details Ltd.",
-    text: "LeadsRift helped us make outreach more predictable. We still had to handle the sales side, but the front end process became much smoother.",
-    name: "Rustom Abraha",
-    rating: 5,
-  },
+{
+  type: "text",
+  company: "Dust Details Ltd.",
+  text: "LeadsRift helped us make outreach more predictable. We still had to handle the sales side, but the front end process became much smoother.",
+  name: "Troy",
+  rating: 5,
+},
 ];
 
 export default function ReviewSection() {
