@@ -35,21 +35,9 @@ export default function AboutPage() {
   const team = [
     {
       name: "Zaddy Israr",
-      role: "Social Media Manager",
+      role: "TECH MANAGER",
       image: "/team/zaddy-israr.png",
       desc: "Managing LeadsRift’s content strategy, social presence, and digital brand growth.",
-    },
-    {
-      name: "Muhammad Asim",
-      role: "Senior Closer",
-      image: "/team/muhammad-asim.png",
-      desc: "Supporting campaign execution, CRM workflows, and daily outreach operations.",
-    },
-    {
-      name: "Shahzaib Abbas",
-      role: "Lead Generation Specialist",
-      image: "/team/Shahzaib-abbas.jpeg",
-      desc: "Handling live prospect conversations and appointment-setting workflows.",
     },
     {
       name: "Labeeb Khattak",
